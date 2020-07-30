@@ -1,0 +1,757 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>666</x>
+      <y>216</y>
+      <w>216</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+UserRole
+--
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>693</x>
+      <y>261</y>
+      <w>90</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>80.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>126</y>
+      <w>198</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
+UserIdentity
+--
++ name: String {NotBlank}
++ surname: String {♫NotBlank}
++ email: String {NotBlank, Email}
++ / fullName: String {NotBlank}
+
+bg=orange
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>216</x>
+      <y>45</y>
+      <w>216</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>The full name catenates the 
+surname, a comma, and the name.
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>261</y>
+      <w>90</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>495</x>
+      <y>189</y>
+      <w>90</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Administrator
+--
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>495</x>
+      <y>126</y>
+      <w>90</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Anonymous
+--
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>495</x>
+      <y>252</y>
+      <w>90</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Authenticated
+--
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>198</y>
+      <w>108</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;50.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>243</y>
+      <w>108</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>216</x>
+      <y>252</y>
+      <w>198</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+CustomCommand
+--
+
+
+bg=orange</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>567</x>
+      <y>342</y>
+      <w>180</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Provider
+--
++ company: String {NotBlank}
++ sector: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>774</x>
+      <y>342</y>
+      <w>189</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Consumer
+--
++ company: String {NotBlank}
++ sector: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>126</y>
+      <w>198</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Datatype&gt;&gt;
+Money
+--
++ amount: double {Digits(10, 2)}
++ currentcy: String {NotBlank}
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>216</y>
+      <w>198</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+BasicCommand
+--
++ LIST
++ SHOW
++ CREATE
++ UPDATE
++ DELETE
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>351</y>
+      <w>198</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Enum&gt;&gt;
+HttpMethod
+--
++ GET
++ POST
+
+bg=yellow</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>612</x>
+      <y>0</y>
+      <w>306</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+UserAccount
+--
++ username: String {Unique, NotBlank, Length(5, 60)}
++ password: String {NotBlank, Length(5, 60)}
++ enabled: boolean
++ identity: Identity {Valid}
++ / anonymous: boolean
+
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>765</x>
+      <y>108</y>
+      <w>63</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m1=1
+m2=*
+has v</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>396</x>
+      <y>459</y>
+      <w>378</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+MinuesaBulletin
+--
++ author: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
++ text: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
++ moment: Date {Temporal(TIMESTAMP), Past}
+bg=magenta</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>459</y>
+      <w>378</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+MelgarBulletin
+--
++ author: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
++ text: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
++ moment: Date {Temporal(TIMESTAMP), Past}
+bg=magenta
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>621</y>
+      <w>459</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Notice
+--
++ header: String {NotBlank, URL, Column(length = 50), Length(min = 1, max = 200)}
++ title: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ creation: Date {NotNull, Past, Temporal(TemporalType.TIMESTAMP)}
++ deadline: Date {NotNull, Temporal(TemporalType.TIMESTAMP)}
++ body: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
++ link: String {URL, Column(length = 200),  Length(max = 200)}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>783</y>
+      <w>459</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Overture
+--
++ title: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ creation: Date {NotNull, Past, Temporal(TemporalType.TIMESTAMP)}
++ deadline: Date {NotNull, Temporal(TemporalType.TIMESTAMP)}
++ description: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
++ maxMoney: Money {NotNull, Valid}
++ minMoney: Money {NotNull, Valid}
++ email: String {NotBlank, Column(length = 50), Length(min = 1, max = 50), Email}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>945</y>
+      <w>459</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+ToolRecord
+--
++ title: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ activitySector: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
++ inventor: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
++ description: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
++ web: String {NotBlank, URL, Column(length = 200),  Length(min = 1, max = 200)}
++ email: String {NotBlank, Column(length = 50),  Length(min = 1, max = 50)}
++ sourceType: Boolean {NotNull}
++ stars: Integer {Range(min = -5, max = 5)}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>477</x>
+      <y>945</y>
+      <w>459</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+TechnologyRecord
+--
++ title: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ activitySector: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
++ inventor: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
++ description: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
++ web: String {NotBlank, URL, Column(length = 200),  Length(min = 1, max = 200)}
++ email: String {NotBlank, Column(length = 50),  Length(min = 1, max = 50)}
++ indication: Boolean {NotNull}
++ star: Integer {Range(min = -5, max = 5)}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>477</x>
+      <y>783</y>
+      <w>459</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Inquirie
+--
++ title: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ creation: Date {NotNull, Past, Temporal(TemporalType.TIMESTAMP)}
++ deadline: Date {NotNull, Temporal(TemporalType.TIMESTAMP)}
++ description: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
++ maxMoney: Money {NotNull, Valid}
++ minMoney: Money {NotNull, Valid}
++ email: String {NotBlank, Column(length = 50), Length(min = 1, max = 50), Email}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>477</x>
+      <y>585</y>
+      <w>459</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Challenge
+--
++ title: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ deadline: Date {NotNull, Temporal(TemporalType.TIMESTAMP)}
++ description: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
++ rookieGoal: String {NotBlank, Column(length = 200), Length(min = 1, max = 200)}
++ rookieReward: Money {Valid, NotNull}
++ averageGoal: String {NotBlank, Column(length = 200), Length(min = 1, max = 200)}
++ averageReward: Money {Valid, NotNull}
++ expertGoal: String {NotBlank, Column(length = 200), Length(min = 1, max = 200)}
++ expertReward: Money {Valid, NotNull}
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>1125</y>
+      <w>513</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Customisation
+--
++ spamWords: String {NotBlank, Column(length = 200), Length(min = 1, max = 200)}
++ threshold: Double {Range(min = 0, max = 100), NotNull}
++ activiySectors: String {NotBlank, Column(length = 200), Length(min = 1, max = 200)}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>999</x>
+      <y>225</y>
+      <w>522</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Entrepreneur
+--
++ startUpName: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ sector: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
++ qualificationRecord: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
++ skillsRecord: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>873</x>
+      <y>243</y>
+      <w>144</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>72</y>
+      <w>522</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Investor
+--
++ companyName: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ sector: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
++ profile: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>873</x>
+      <y>108</y>
+      <w>135</w>
+      <h>153</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;150.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1674</x>
+      <y>216</y>
+      <w>477</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+InvestmetRound
+--
++ ticker: String {NotBlank, Column(length = 10), Length(min = 1, max = 10)}
++ creationMoment: Date {NotNull, Temporal(TemporalType.TIMESTAMP), Past}
++ round: String {NotBlank, Column(length = 10), Length(min = 1, max = 10)}
++ title: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ description: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
++ amountMoney: Money {Valid, NotNull}
++ moreInfo: String {URL, Column(length = 200), Length(max = 200)}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1512</x>
+      <y>261</y>
+      <w>180</w>
+      <h>45</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+published by</panel_attributes>
+    <additional_attributes>10.0;20.0;180.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1503</x>
+      <y>612</y>
+      <w>441</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+WorkProgamme
+--
++ title: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ start: Date {NotNull, Temporal(TemporalType.TIMESTAMP), Past}
++ deadline: Date {NotNull, Temporal(TemporalType.TIMESTAMP)}
++ budget: Money {Valid, NotNull}
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1782</x>
+      <y>351</y>
+      <w>81</w>
+      <h>279</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+belong to</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;290.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1683</x>
+      <y>63</y>
+      <w>477</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Application
+--
++ ticker: String {NotBlank, Column(length = 10), Length(min = 1, max = 10)}
++ creationMoment: Date {NotNull, Temporal(TemporalType.TIMESTAMP), Past}
++ statement: String {NotBlank, Column(length = 200), Length(min = 1, max = 200)}
++ moneyOffer: Money {Valid, NotNull}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2142</x>
+      <y>117</y>
+      <w>225</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=1..*
+application for</panel_attributes>
+    <additional_attributes>10.0;200.0;140.0;200.0;140.0;10.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>972</x>
+      <y>612</y>
+      <w>495</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Accounting Record
+--
++ title: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
++ status: boolean {NotNull}¨
++ creation: Date {NotNull,Temporal(TemporalType.TIMESTAMP), Past}¨
++ body: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>414</y>
+      <w>45</w>
+      <h>216</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+role</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;220.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>990</x>
+      <y>351</y>
+      <w>549</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Role&gt;&gt;
+Bookkeeper
+--
++ name: String {NotBlank, Column(length = 100), Length(min = 1, max = 100)}
++ responsibilityStatement: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>828</x>
+      <y>261</y>
+      <w>189</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2061</x>
+      <y>351</y>
+      <w>63</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-&gt;
+m1=1
+m2=1
+&lt; has </panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1962</x>
+      <y>450</y>
+      <w>441</w>
+      <h>63</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Forum
+--
++ title: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>2061</x>
+      <y>504</y>
+      <w>81</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+belong to</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1962</x>
+      <y>612</y>
+      <w>441</w>
+      <h>108</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Entity&gt;&gt;
+Message
+--
++ title: String {NotBlank, Column(length = 50), Length(min = 1, max = 50)}
++ creation: Date {NotNull,Temporal(TemporalType.TIMESTAMP), Past}¨
++ tags: String {Column(length = 200), Length(max = 200)}
++ body: String {NotBlank, Column(length = 500), Length(min = 1, max = 500)}
+
+bg=light_gray</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1368</x>
+      <y>351</y>
+      <w>405</w>
+      <h>279</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+belong to</panel_attributes>
+    <additional_attributes>420.0;10.0;420.0;180.0;10.0;180.0;10.0;290.0</additional_attributes>
+  </element>
+</diagram>
