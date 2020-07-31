@@ -88,6 +88,9 @@
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.technologyRecords.list" action="/administrator/technology-record/list" />
 			<acme:menu-suboption code="master.menu.administrator.technologyRecords.create" action="/administrator/technology-record/create" />
+			<!--  Bookkeeper Request -->
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.administrator.bookkeeper.request" action="/administrator/bookkeeper-request/list" />
 			<!--  Shutdown -->
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown" />
@@ -119,7 +122,8 @@
 		<%--------------------Bookkeeper--------------------%>
 		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
 			<acme:menu-suboption code="master.menu.bookkeeper.investmentRound.listMine" action="/bookkeeper/investment-round/list-mine" />
-			<acme:menu-suboption code="master.menu.bookkeeper.investmentRound.listNotMine" action="/bookkeeper/investment-round/list-not-mine" />
+			<acme:menu-suboption code="master.menu.bookkeeper.investmentRound.listNotMine"
+				action="/bookkeeper/investment-round/list-not-mine" />
 		</acme:menu-option>
 
 	</acme:menu-left>
@@ -138,6 +142,8 @@
 				access="!hasRole('Consumer')" />
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update"
 				access="hasRole('Consumer')" />
+			<acme:menu-suboption code="master.menu.user-account.become-bookkeeper" action="/authenticated/bookkeeper-request/create"
+				access="!hasRole('Bookkeeper')" />
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()" />
