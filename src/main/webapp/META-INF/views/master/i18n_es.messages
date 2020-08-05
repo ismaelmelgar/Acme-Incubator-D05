@@ -51,8 +51,12 @@ master.menu.bulletin.dos.minuesaBulletin.form = ¡Grita a Minuesa!
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Autenticado
-
 master.menu.authenticated.investmentRound.list = Rondas de Inversion
+
+master.menu.authenticated.become-entrepreneur = Hazte empresario
+master.menu.authenticated.update-entrepreneur = Actualizar mis datos de empresario
+master.menu.authenticated.become-investor = Hazte inversor
+master.menu.authenticated.update-investor = Actualizar mis datos de inversor
 
 # master.menu.administrator ###################################################
 

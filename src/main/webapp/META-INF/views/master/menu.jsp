@@ -64,6 +64,15 @@
 			<!--  Investment Rounds -->
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.authenticated.investmentRound.list" action="/authenticated/investment-round/list" />
+			<!--  Become entrepreneur -->
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.authenticated.become-entrepreneur" action="/authenticated/entrepreneur/create"
+				access="!hasRole('Entrepreneur')" />
+			<acme:menu-suboption code="master.menu.authenticated.update-entrepreneur" action="/authenticated/entrepreneur/update" access="hasRole('Entrepreneur')" />
+			<!--  Become investor -->
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.authenticated.become-investor" action="/authenticated/investor/create" access="!hasRole('Investor')" />
+			<acme:menu-suboption code="master.menu.authenticated.update-investor" action="/authenticated/investor/update" access="hasRole('Investor')" />
 		</acme:menu-option>
 
 		<%--------------------Administrator--------------------%>
@@ -119,7 +128,8 @@
 		<%--------------------Bookkeeper--------------------%>
 		<acme:menu-option code="master.menu.bookkeeper" access="hasRole('Bookkeeper')">
 			<acme:menu-suboption code="master.menu.bookkeeper.investmentRound.listMine" action="/bookkeeper/investment-round/list-mine" />
-			<acme:menu-suboption code="master.menu.bookkeeper.investmentRound.listNotMine" action="/bookkeeper/investment-round/list-not-mine" />
+			<acme:menu-suboption code="master.menu.bookkeeper.investmentRound.listNotMine"
+				action="/bookkeeper/investment-round/list-not-mine" />
 		</acme:menu-option>
 
 	</acme:menu-left>

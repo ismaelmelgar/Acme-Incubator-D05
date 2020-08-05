@@ -50,8 +50,12 @@ master.menu.bulletin.dos.minuesaBulletin.form = Shout to Minuesa!
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Authenticated
-
 master.menu.authenticated.investmentRound.list = Investment Rounds
+
+master.menu.authenticated.become-entrepreneur = Become an entrepreneur
+master.menu.authenticated.update-entrepreneur = Update my entrepreneur data
+master.menu.authenticated.become-investor = Become an investor
+master.menu.authenticated.update-investor = Update my investor data
 
 # master.menu.administrator ###################################################
 
