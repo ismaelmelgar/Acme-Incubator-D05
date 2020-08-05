@@ -29,7 +29,7 @@ public class AdministratorBookkeeperRequestShowService implements AbstractShowSe
 		assert request != null;
 		assert entity != null;
 		assert model != null;
-		request.unbind(entity, model, "firm", "responsibilityStatement");
+		request.unbind(entity, model, "firm", "responsibilityStatement", "hasAppliedBefore");
 
 	}
 

@@ -17,11 +17,17 @@
 
 <acme:form>
 
-	<acme:form-textarea code="authenticated.bookkeeper-request.form.label.firm" path="firm" />
-	<acme:form-textarea code="authenticated.bookkeeper-request.form.label.responsibilityStatement" path="responsibilityStatement" />
+	<jstl:if test="${hasAppliedBefore == 0}">
+		<acme:form-textarea code="authenticated.bookkeeper-request.form.label.firm" path="firm" />
+		<acme:form-textarea code="authenticated.bookkeeper-request.form.label.responsibilityStatement" path="responsibilityStatement" />
 
-	<acme:form-submit test="${command == 'create'}" code="authenticated.bookkeeper-request.form.button.create"
-		action="/authenticated/bookkeeper-request/create" />
+		<acme:form-submit test="${command == 'create'}" code="authenticated.bookkeeper-request.form.button.create"
+			action="/authenticated/bookkeeper-request/create" />
+	</jstl:if>
+
+	<jstl:if test="${hasAppliedBefore > 0}">
+		<acme:message code="bookkeeper.error.exist" />
+	</jstl:if>
 
 	<acme:form-return code="authenticated.bookkeeper-request.form.button.return" />
 

@@ -8,8 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+administrator.bookkeeper.list.label.username = Username
 administrator.bookkeeper.form.label.firm = Firm
-administrator.bookkeeper.form.label.responsabilityStatement = Responsibility statement
+administrator.bookkeeper.form.label.responsibilityStatement = Responsibility statement
 
 administrator.bookkeeper.form.button.accept = Accept
 administrator.bookkeeper.form.button.reject = Reject

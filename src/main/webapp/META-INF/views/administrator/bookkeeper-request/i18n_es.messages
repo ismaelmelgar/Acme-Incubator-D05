@@ -1,4 +1,3 @@
-  
 # i18n_es.messages
 #
 # Copyright (c) 2019 Rafael Corchuelo.
@@ -9,9 +8,9 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
+administrator.bookkeeper.list.label.username = Usuario
 administrator.bookkeeper.form.label.firm = Firma
 administrator.bookkeeper.form.label.responsibilityStatement = Declaración de Responsabilidad
-
 
 administrator.bookkeeper.form.button.accept = Aceptar
 administrator.bookkeeper.form.button.reject = Rechazar

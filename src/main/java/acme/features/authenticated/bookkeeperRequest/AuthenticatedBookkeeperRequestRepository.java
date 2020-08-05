@@ -28,4 +28,6 @@ public interface AuthenticatedBookkeeperRequestRepository extends AbstractReposi
 	@Query("select au from Authenticated au where au.userAccount.id =?1")
 	Authenticated findOneAuthenticatedByUserAccountId(int userAccountId);
 
+	@Query("select count(a) from BookkeeperRequest a where a.authenticated.userAccount.id = ?1")
+	int findTotalBookkeeperRequestByUserAccountId(int userAccountId);
 }

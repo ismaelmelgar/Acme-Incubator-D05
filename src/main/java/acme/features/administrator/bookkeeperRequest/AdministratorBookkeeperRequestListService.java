@@ -31,7 +31,7 @@ public class AdministratorBookkeeperRequestListService implements AbstractListSe
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "authenticated.userAccount.username", "firm", "responsibilityStatement");
+		request.unbind(entity, model, "authenticated.userAccount.username", "firm", "responsibilityStatement", "hasAppliedBefore");
 	}
 
 	@Override

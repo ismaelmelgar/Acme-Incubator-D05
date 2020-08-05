@@ -20,9 +20,10 @@
 	<acme:form-textarea code="administrator.bookkeeper.form.label.responsibilityStatement" path="responsibilityStatement"
 		readonly="true" />
 
-	<acme:form-submit code="administrator.bookkeeper.form.button.accept" action="/administrator/bookkeeper-request/create?id=${id}" />
+	<acme:form-submit code="administrator.bookkeeper.form.button.accept" action="/administrator/bookkeeper/create?id=${id}" />
 
 	<acme:form-submit code="administrator.bookkeeper.form.button.reject" action="/administrator/bookkeeper-request/delete" />
 
 	<acme:form-return code="administrator.bookkeeper.form.button.return" />
 </acme:form>
+

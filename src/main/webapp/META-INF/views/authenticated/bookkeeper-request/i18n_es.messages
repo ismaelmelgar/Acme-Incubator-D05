@@ -13,6 +13,6 @@ authenticated.bookkeeper-request.form.label.firm = Firma:
 authenticated.bookkeeper-request.form.label.responsibilityStatement = Responsabilidades:
 
 authenticated.bookkeeper-request.form.button.create = Solicitar
-authenticated.bookkeeper-request.form.button.return = Return
+authenticated.bookkeeper-request.form.button.return = Volver
 
-bookkeeper.error.exist = Ya has enviado una solicitud para ser Bookkeeper
+bookkeeper.error.exist = Ya enviaste una solicitud para ser Contable

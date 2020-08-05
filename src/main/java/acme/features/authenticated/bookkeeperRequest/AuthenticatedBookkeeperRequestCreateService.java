@@ -44,7 +44,7 @@ public class AuthenticatedBookkeeperRequestCreateService implements AbstractCrea
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "firm", "responsibilityStatement");
+		request.unbind(entity, model, "firm", "responsibilityStatement", "hasAppliedBefore");
 	}
 
 	@Override
@@ -62,6 +62,8 @@ public class AuthenticatedBookkeeperRequestCreateService implements AbstractCrea
 		userAccountId = principal.getAccountId();
 		authenticated = this.repository.findOneAuthenticatedByUserAccountId(userAccountId);
 		result.setAuthenticated(authenticated);
+		result.setHasAppliedBefore(this.repository.findTotalBookkeeperRequestByUserAccountId(userAccountId));
+
 		return result;
 	}
 

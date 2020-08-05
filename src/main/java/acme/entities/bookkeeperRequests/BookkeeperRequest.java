@@ -33,6 +33,8 @@ public class BookkeeperRequest extends DomainEntity {
 	@Column(length = 3000)
 	private String				responsibilityStatement;
 
+	private Integer				hasAppliedBefore;
+
 	// Derived attributes -----------------------------------------------------
 
 	@NotNull

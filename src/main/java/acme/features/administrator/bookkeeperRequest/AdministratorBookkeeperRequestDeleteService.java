@@ -29,7 +29,7 @@ public class AdministratorBookkeeperRequestDeleteService implements AbstractDele
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
-		request.bind(entity, errors);
+		request.bind(entity, errors, "hasAppliedBefore");
 	}
 
 	@Override

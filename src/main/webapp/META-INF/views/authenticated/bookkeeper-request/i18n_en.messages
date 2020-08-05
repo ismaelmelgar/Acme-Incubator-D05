@@ -14,4 +14,4 @@ authenticated.bookkeeper-request.form.label.responsibilityStatement = Responsibi
 authenticated.bookkeeper-request.form.button.create = Apply
 authenticated.bookkeeper-request.form.button.return = Return
 
-bookkeeper.error.exist = You have already sent a request to be an Bookkeeper
+bookkeeper.error.exist = You have already sent a request to became a Bookkeeper
