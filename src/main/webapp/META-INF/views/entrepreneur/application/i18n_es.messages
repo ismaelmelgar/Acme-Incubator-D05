@@ -12,7 +12,13 @@ entrepreneur.application.label.ticker = Ticker
 entrepreneur.application.label.creationMoment = Creacion
 entrepreneur.application.label.statement = Declaracion
 entrepreneur.application.label.moneyOffer = Oferta de dinero
-entrepreneur.application.label.tickerInvestmentRound = Ticker de la Ronda de Inversion solicitada
-entrepreneur.application.label.investorName = Solicitado por
+entrepreneur.application.label.tickerInvestmentRound = Ticker de la Ronda de Inversion
+entrepreneur.application.label.investorName = Inversor
+
+entrepreneur.application.form.label.status = Estado de la solicitud
+entrepreneur.application.form.label.reason = Razón de rechazo (si aplica)
+
+entrepreneur.application.form.button.update = Actualizar estado
+entrepreneur.application.form.button.status = Estado de la solicitud
 
 entrepreneur.application.button.return = Volver

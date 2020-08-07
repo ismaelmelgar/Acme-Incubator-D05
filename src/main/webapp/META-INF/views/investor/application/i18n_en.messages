@@ -14,5 +14,8 @@ investor.application.label.statement = Statement
 investor.application.label.moneyOffer = Money Offer
 investor.application.label.tickerInvestmentRound = Ticker of Requested Investment Round  
 investor.application.label.investorName = Requested By
+investor.application.label.status = Status
+
+investor.application.form.button.create = Create application
 
 investor.application.button.return = Return

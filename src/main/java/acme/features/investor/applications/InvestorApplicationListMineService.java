@@ -20,8 +20,8 @@ public class InvestorApplicationListMineService implements AbstractListService<I
 	@Autowired
 	InvestorApplicationRepository repository;
 
-
 	// AbstractListService<Investor, Application> interface ------------------------------
+
 
 	@Override
 	public boolean authorise(final Request<Application> request) {
@@ -35,7 +35,7 @@ public class InvestorApplicationListMineService implements AbstractListService<I
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "ticker", "creationMoment", "moneyOffer", "investmentRound.ticker");
+		request.unbind(entity, model, "ticker", "creationMoment", "moneyOffer", "investmentRound.ticker", "status");
 
 	}
 

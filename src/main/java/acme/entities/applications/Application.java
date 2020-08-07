@@ -54,6 +54,13 @@ public class Application extends DomainEntity {
 	@NotNull
 	private Money				moneyOffer;
 
+	@NotBlank
+	@Pattern(regexp = ".*\\b(Accepted|Pending|Rejected)\\b.*")
+	private String				status;
+
+	@Column(length = 1024)
+	private String				reason;
+
 	//Relationships -----------------------------------------------------
 
 	@Valid

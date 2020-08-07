@@ -16,7 +16,14 @@ entrepreneur.investmentRound.label.description = Descripcion
 entrepreneur.investmentRound.label.amountMoney = Cantidad de dinero
 entrepreneur.investmentRound.label.moreInfo = Mas informacion
 entrepreneur.investmentRound.label.entrepreneur = Contratista
+entrepreneur.investmentRound.label.status = Estado
 
 entrepreneur.investmentRound.form.button.workProgramme = Programa de Trabajo
 entrepreneur.investmentRound.form.button.accountingRecord = Registro Contable
+entrepreneur.investmentRound.form.button.update = Crear
+entrepreneur.investmentRound.form.button.update = Actualizar
+entrepreneur.investmentRound.form.button.delete = Borrar
+
 entrepreneur.investmentRound.button.return = Volver
+
+entrepreneur.investment-round.form.error.hasApplication = No puede ser eliminada. Tiene una solicitud pendiente
