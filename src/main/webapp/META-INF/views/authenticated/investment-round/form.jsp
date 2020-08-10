@@ -18,15 +18,15 @@
 
 <acme:form readonly="true">
 	<acme:form-textbox code="authenticated.investmentRound.label.ticker" path="ticker" />
-	<acme:form-textbox code="authenticated.investmentRound.label.creationMoment" path="creationMoment" />
+	<acme:form-moment code="authenticated.investmentRound.label.creationMoment" path="creationMoment" />
 	<acme:form-textbox code="authenticated.investmentRound.label.round" path="round" />
 	<acme:form-textbox code="authenticated.investmentRound.label.title" path="title" />
 	<acme:form-textbox code="authenticated.investmentRound.label.description" path="description" />
-	<acme:form-textbox code="authenticated.investmentRound.label.amountMoney" path="amountMoney" />
-	<acme:form-textbox code="authenticated.investmentRound.label.moreInfo" path="moreInfo" />
+	<acme:form-money code="authenticated.investmentRound.label.amountMoney" path="amountMoney" />
+	<acme:form-url code="authenticated.investmentRound.label.moreInfo" path="moreInfo" />
 	<acme:form-textbox code="authenticated.investmentRound.label.entrepreneur" path="entrepreneur.identity.fullName" />
 
-
+	<acme:form-submit test="${isInvestor}" code="investor.investmentRound.form.button.application" action="/investor/application/create?investmentRoundId=${id}"  method="get"/>
 	<acme:form-submit code="authenticated.investmentRound.form.button.workProgramme"
 		action="/authenticated/work-programme/list?investmenRoundId=${id}" method="get" />
 	<acme:form-submit test="${numAR > 0}" code="authenticated.investmentRound.form.button.accountingRecord"

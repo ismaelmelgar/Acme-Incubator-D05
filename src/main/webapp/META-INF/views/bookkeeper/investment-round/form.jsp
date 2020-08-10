@@ -18,12 +18,12 @@
 
 <acme:form readonly="true">
 	<acme:form-textbox code="bookkeeper.investmentRound.label.ticker" path="ticker" />
-	<acme:form-textbox code="bookkeeper.investmentRound.label.creation" path="creationMoment" />
+	<acme:form-moment code="bookkeeper.investmentRound.label.creation" path="creationMoment" />
 	<acme:form-textbox code="bookkeeper.investmentRound.label.round" path="round" />
 	<acme:form-textbox code="bookkeeper.investmentRound.label.title" path="title" />
 	<acme:form-textbox code="bookkeeper.investmentRound.label.description" path="description" />
-	<acme:form-textbox code="bookkeeper.investmentRound.label.amountMoney" path="amountMoney" />
-	<acme:form-textbox code="bookkeeper.investmentRound.label.moreInfo" path="moreInfo" />
+	<acme:form-money code="bookkeeper.investmentRound.label.amountMoney" path="amountMoney" />
+	<acme:form-url code="bookkeeper.investmentRound.label.moreInfo" path="moreInfo" />
 	<acme:form-textbox code="bookkeeper.investmentRound.label.entrepreneur" path="entrepreneur.identity.fullName" />
 
 	<acme:form-submit test="${numAR > 0}" code="bookkeeper.investmentRound.form.button.accountingRecord"
