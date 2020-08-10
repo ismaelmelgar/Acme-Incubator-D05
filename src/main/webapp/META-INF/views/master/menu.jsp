@@ -64,18 +64,6 @@
 			<!--  Investment Rounds -->
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.authenticated.investmentRound.list" action="/authenticated/investment-round/list" />
-			<!--  Become entrepreneur -->
-			<acme:menu-separator />
-			<acme:menu-suboption code="master.menu.authenticated.become-entrepreneur" action="/authenticated/entrepreneur/create"
-				access="!hasRole('Entrepreneur')" />
-			<acme:menu-suboption code="master.menu.authenticated.update-entrepreneur" action="/authenticated/entrepreneur/update"
-				access="hasRole('Entrepreneur')" />
-			<!--  Become investor -->
-			<acme:menu-separator />
-			<acme:menu-suboption code="master.menu.authenticated.become-investor" action="/authenticated/investor/create"
-				access="!hasRole('Investor')" />
-			<acme:menu-suboption code="master.menu.authenticated.update-investor" action="/authenticated/investor/update"
-				access="hasRole('Investor')" />
 		</acme:menu-option>
 
 		<%--------------------Administrator--------------------%>
@@ -158,6 +146,18 @@
 				access="!hasRole('Consumer')" />
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update"
 				access="hasRole('Consumer')" />
+			<!--  Become entrepreneur -->
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.authenticated.become-entrepreneur" action="/authenticated/entrepreneur/create"
+				access="!hasRole('Entrepreneur')" />
+			<acme:menu-suboption code="master.menu.authenticated.update-entrepreneur" action="/authenticated/entrepreneur/update"
+				access="hasRole('Entrepreneur')" />
+			<!--  Become investor -->
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.authenticated.become-investor" action="/authenticated/investor/create"
+				access="!hasRole('Investor')" />
+			<acme:menu-suboption code="master.menu.authenticated.update-investor" action="/authenticated/investor/update"
+				access="hasRole('Investor')" />
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()" />

@@ -6,9 +6,12 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.forums.Forum;
 import acme.entities.investmentRounds.InvestmentRound;
+import acme.entities.messages.Message;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.workProgrammes.WorkProgramme;
+import acme.features.entrepreneur.message.EntrepreneurMessageRepository;
 import acme.features.entrepreneur.workProgrammes.EntrepreneurWorkProgrammeRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -23,6 +26,9 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 
 	@Autowired
 	EntrepreneurWorkProgrammeRepository		workProgrammeRepository;
+
+	@Autowired
+	EntrepreneurMessageRepository			messageRepository;
 
 
 	@Override
@@ -87,10 +93,12 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		assert entity != null;
 
 		Collection<WorkProgramme> workProgrammes = this.repository.findAllWorkProgrammeByInvestmentRoundId(entity.getId());
+		this.repository.deleteAll(workProgrammes);
 
-		for (WorkProgramme wp : workProgrammes) {
-			this.workProgrammeRepository.delete(wp);
-		}
+		Forum forum = this.repository.findForumByInvestmentRoundId(entity.getId());
+		Collection<Message> messages = this.messageRepository.findMany(forum.getId());
+		this.messageRepository.deleteAll(messages);
+		this.repository.delete(forum);
 
 		this.repository.delete(entity);
 	}

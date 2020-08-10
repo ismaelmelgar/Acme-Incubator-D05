@@ -68,7 +68,7 @@
 		code="entrepreneur.investmentRound.form.button.workProgramme" action="/entrepreneur/work-programme/list?investmentRoundId=${id}"
 		method="get" />
 	<acme:form-submit test="${(command == 'show' || command == 'update') && status == true && numAR > 0}"
-		code="entrepreneur.investmentRound.form.button.accounting-record"
+		code="entrepreneur.investmentRound.form.button.accountingRecord"
 		action="/entrepreneur/accounting-record/list-mine?investmentRoundid=${id}" method="get" />
 
 	<acme:form-return code="entrepreneur.investmentRound.button.return" />
