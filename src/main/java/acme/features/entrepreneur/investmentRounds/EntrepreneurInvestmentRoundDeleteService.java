@@ -83,7 +83,7 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		if (!errors.hasErrors("ticker")) {
 			idInvestmentRound = request.getModel().getInteger("id");
 			totalApplications = this.repository.findApplicationByInvestmentRoundId(idInvestmentRound);
-			errors.state(request, totalApplications == 0, "ticker", "entrepreneur.investment-round.form.error.hasApplication");
+			errors.state(request, totalApplications == 0, "ticker", "entrepreneur.investmentRound.form.error.hasApplication");
 		}
 	}
 

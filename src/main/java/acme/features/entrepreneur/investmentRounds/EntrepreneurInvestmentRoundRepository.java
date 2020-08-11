@@ -42,4 +42,7 @@ public interface EntrepreneurInvestmentRoundRepository extends AbstractRepositor
 	@Query("select f from Forum f where f.investmentRound.id = ?1")
 	Forum findForumByInvestmentRoundId(int investmentRoundId);
 
+	@Query("select e.ticker from InvestmentRound e")
+	Collection<String> getTickers();
+
 }

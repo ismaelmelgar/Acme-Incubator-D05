@@ -37,7 +37,7 @@
 		<acme:form-textarea code="entrepreneur.application.form.label.reason" path="reason" />
 	</jstl:if>
 	
-	<acme:form-submit test="${command == 'show' && status=='Pending'}" code="entrepreneur.application.form.button.status"
+	<acme:form-submit test="${command == 'show' && status=='Pending'}" code="entrepreneur.application.form.button.publish"
 		action="/entrepreneur/application/update?id=${id}" method="get" />
 	<acme:form-submit test="${command == 'update'}" code="entrepreneur.application.form.button.update"
 		action="/entrepreneur/application/update" />
