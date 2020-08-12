@@ -210,8 +210,8 @@
 
 	<bean id="customisation" class="acme.entities.configuration.Customisation">
 		<property name="spamWords"
-			value="sex, hard core, viagra, cialis, nigeria, you’ve won, million dollar, sexo, duro, has ganado, un millon de dolares" />
-		<property name="threshold" value="2.50" />
+			value="sex, hard core, viagra, cialis, nigeria, you've won, million dollar, sexo, duro, has ganado, un millon de dolares" />
+		<property name="threshold" value="1.00" />
 		<property name="activitySectors"
 			value="Technology, Science, Arts, Business, Health, Tecnología, Ciencia, Artes, Negocios, Salud" />
 	</bean>
@@ -513,6 +513,11 @@
 		<property name="title" value="Forum 3" />
 		<property name="investmentRound" ref="investmentRound03" />
 	</bean>
+	
+	<bean name="forum04" class="acme.entities.forums.Forum">
+		<property name="title" value="Forum 4" />
+		<property name="investmentRound" ref="investmentRound04" />
+	</bean>
 
 	<!-- Messages -->
 
@@ -646,4 +651,21 @@
 		<property name="investmentRound" ref="investmentRound02" />
 	</bean>
 
+	<bean name="accountingRecord03" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="AR 3" />
+		<property name="status" value="true" />
+		<property name="creation" value="2020/07/10 13:00" />
+		<property name="body" value="Example of accounting record." />
+		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound03" />
+	</bean>
+	
+	<bean name="accountingRecord04" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="AR 4" />
+		<property name="status" value="false" />
+		<property name="creation" value="2020/07/10 14:00" />
+		<property name="body" value="Example of accounting record." />
+		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
+		<property name="investmentRound" ref="investmentRound04" />
+	</bean>
 </beans>

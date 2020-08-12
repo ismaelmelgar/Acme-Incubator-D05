@@ -35,3 +35,4 @@ entrepreneur.investmentRound.button.return = Return
 entrepreneur.investmentRound.form.error.hasApplication = It cannot be deleted. It has an application
 entrepreneur.investmentRound.form.error.tickerRepeated = Existing ticker, write a different one
 entrepreneur.investmentRound.form.error.zoneEur = Solo están permitidos Euro, EUR o €
+entrepreneur.investmentRound.error.spam = Please, enter a text free of spam

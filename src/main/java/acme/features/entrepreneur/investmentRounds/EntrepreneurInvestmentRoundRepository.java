@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.configuration.Customisation;
 import acme.entities.forums.Forum;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
@@ -44,5 +45,8 @@ public interface EntrepreneurInvestmentRoundRepository extends AbstractRepositor
 
 	@Query("select e.ticker from InvestmentRound e")
 	Collection<String> getTickers();
+
+	@Query("select c from Customisation c")
+	Customisation findCustomisation();
 
 }

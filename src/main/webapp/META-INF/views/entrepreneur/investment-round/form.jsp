@@ -59,9 +59,6 @@
 		<acme:form-checkbox code="entrepreneur.investmentRound.label.confirmPublishment" path="status" />
 	</jstl:if>
 
-	<acme:form-submit test="${command == 'show' && status==false}" code="entrepreneur.investmentRound.form.button.statusFinal"
-		action="/entrepreneur/investment-round/update?id=${id}" method="get" />
-
 	<acme:form-submit test="${command == 'update'}" code="entrepreneur.investmentRound.form.button.updatePublish"
 		action="/entrepreneur/investment-round/update" />
 

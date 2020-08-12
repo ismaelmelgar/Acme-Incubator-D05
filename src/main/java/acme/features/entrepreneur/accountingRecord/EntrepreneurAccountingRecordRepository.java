@@ -32,4 +32,6 @@ public interface EntrepreneurAccountingRecordRepository extends AbstractReposito
 	@Query("select ar from AccountingRecord ar where ar.investmentRound.id = ?1 and ar.status = 1")
 	Collection<AccountingRecord> findManyByInvestmentRoundId(int entrepreneurId);
 
+	@Query("select ar from AccountingRecord ar where ar.investmentRound.id = ?1")
+	Collection<AccountingRecord> findByInvestmentRoundId(int entrepreneurId);
 }
