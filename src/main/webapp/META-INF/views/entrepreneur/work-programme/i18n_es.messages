@@ -13,4 +13,6 @@ entrepreneur.workProgramme.label.start = Comienzo
 entrepreneur.workProgramme.label.end = Final
 entrepreneur.workProgramme.label.budget = Presupuesto
 
+entrepreneur.workProgramme.button.create = Crear
+
 entrepreneur.workProgramme.button.return = Volver

@@ -48,6 +48,7 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		assert model != null;
 
 		request.unbind(entity, model, "ticker", "creationMoment", "round", "title", "description", "status", "amountMoney", "moreInfo", "entrepreneur.identity.fullName");
+
 	}
 
 	@Override
