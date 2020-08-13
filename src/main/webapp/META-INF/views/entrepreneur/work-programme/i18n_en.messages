@@ -14,5 +14,7 @@ entrepreneur.workProgramme.label.end = End
 entrepreneur.workProgramme.label.budget = Budget
 
 entrepreneur.workProgramme.button.create = Create
+entrepreneur.workProgramme.button.update = Update
+entrepreneur.workProgramme.button.delete = Delete
 
 entrepreneur.workProgramme.button.return = Return

@@ -1,29 +1,22 @@
 
 package acme.features.entrepreneur.workProgrammes;
 
-import java.util.Date;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.workProgrammes.WorkProgramme;
-import acme.features.entrepreneur.investmentRounds.EntrepreneurInvestmentRoundRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
-import acme.framework.services.AbstractCreateService;
+import acme.framework.services.AbstractUpdateService;
 
 @Service
-public class EntrepreneurWorkProgrammeCreateService implements AbstractCreateService<Entrepreneur, WorkProgramme> {
+public class EntrepreneurWorkProgrammeUpdateService implements AbstractUpdateService<Entrepreneur, WorkProgramme> {
 
 	@Autowired
-	EntrepreneurWorkProgrammeRepository		repository;
-
-	@Autowired
-	EntrepreneurInvestmentRoundRepository	investmentRoundRepository;
+	EntrepreneurWorkProgrammeRepository repository;
 
 
 	@Override
@@ -31,16 +24,15 @@ public class EntrepreneurWorkProgrammeCreateService implements AbstractCreateSer
 		assert request != null;
 
 		boolean result;
-		int investmentRoundId;
-		InvestmentRound investmentRound;
+		int workProgrammeId;
+		WorkProgramme workProgramme;
 		Entrepreneur entrepreneur;
 		Principal principal;
 
-		investmentRoundId = request.getModel().getInteger("investmentRoundId");
-		investmentRound = this.repository.findOneByIdII(investmentRoundId);
-		entrepreneur = investmentRound.getEntrepreneur();
+		workProgrammeId = request.getModel().getInteger("id");
+		workProgramme = this.repository.findOneById(workProgrammeId);
+		entrepreneur = workProgramme.getInvestmentRound().getEntrepreneur();
 		principal = request.getPrincipal();
-
 		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
 
 		return result;
@@ -62,24 +54,19 @@ public class EntrepreneurWorkProgrammeCreateService implements AbstractCreateSer
 		assert entity != null;
 		assert model != null;
 
-		model.setAttribute("investmentRoundId", entity.getInvestmentRound().getId());
 		request.unbind(entity, model, "title", "start", "end", "budget");
+
 	}
 
 	@Override
-	public WorkProgramme instantiate(final Request<WorkProgramme> request) {
+	public WorkProgramme findOne(final Request<WorkProgramme> request) {
+		assert request != null;
+
 		WorkProgramme result;
+		int id;
 
-		result = new WorkProgramme();
-		InvestmentRound investmentRound;
-		int investmentRoundId = request.getModel().getInteger("investmentRoundId");
-		Date moment;
-
-		moment = new Date(System.currentTimeMillis() - 1);
-		result.setStart(moment);
-
-		investmentRound = this.investmentRoundRepository.findOneById(investmentRoundId);
-		result.setInvestmentRound(investmentRound);
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneById(id);
 
 		return result;
 	}
@@ -92,16 +79,10 @@ public class EntrepreneurWorkProgrammeCreateService implements AbstractCreateSer
 	}
 
 	@Override
-	public void create(final Request<WorkProgramme> request, final WorkProgramme entity) {
+	public void update(final Request<WorkProgramme> request, final WorkProgramme entity) {
 		assert request != null;
 		assert entity != null;
 
-		Date moment;
-
-		moment = new Date(System.currentTimeMillis() - 1);
-		entity.setStart(moment);
 		this.repository.save(entity);
-
 	}
-
 }
