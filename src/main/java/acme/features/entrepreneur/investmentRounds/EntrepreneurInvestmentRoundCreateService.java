@@ -81,14 +81,6 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 
 		Collection<String> tickers = this.repository.getTickers();
 
-		if (!errors.hasErrors("ticker")) {
-			errors.state(request, !tickers.contains(entity.getTicker()), "ticker", "entrepreneur.investmentRound.form.error.tickerRepeated");
-		}
-
-		if (!errors.hasErrors("amountMoney")) {
-			errors.state(request, entity.getAmountMoney().getCurrency().equals("EUR") || entity.getAmountMoney().getCurrency().equals("€"), "amountMoney", "entrepreneur.investmentRound.form.error.zoneEur");
-		}
-
 		//Filtro Anti-Spam
 
 		SpamFilter sf = new SpamFilter();
@@ -105,6 +97,19 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		if (!errors.hasErrors("description")) {
 			Boolean isSpam = sf.isFreeSpam(spamWordPieces, entity.getDescription(), threshold);
 			errors.state(request, isSpam, "description", "entrepreneur.investmentRound.error.spam");
+		}
+
+		if (!errors.hasErrors("ticker")) {
+			errors.state(request, !tickers.contains(entity.getTicker()), "ticker", "entrepreneur.investmentRound.form.error.tickerRepeated");
+		}
+
+		if (!errors.hasErrors("amountMoney")) {
+			errors.state(request, entity.getAmountMoney().getCurrency().equals("EUR") || entity.getAmountMoney().getCurrency().equals("€"), "amountMoney", "entrepreneur.investmentRound.form.error.zoneEur");
+		}
+
+		if (!errors.hasErrors("ticker")) {
+			String ticker = entity.getTicker();
+			System.out.println(ticker);
 		}
 
 	}

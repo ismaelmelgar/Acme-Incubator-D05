@@ -49,4 +49,7 @@ public interface EntrepreneurInvestmentRoundRepository extends AbstractRepositor
 	@Query("select c from Customisation c")
 	Customisation findCustomisation();
 
+	@Query("select sum(wp.budget.amount) from WorkProgramme wp where wp.investmentRound.id = ?1")
+	Double sumBudgetWorkProgramme(int id);
+
 }

@@ -20,5 +20,6 @@ entrepreneur.application.form.label.reason = Razón de rechazo (si aplica)
 
 entrepreneur.application.form.button.update = Actualizar estado
 entrepreneur.application.form.button.status = Estado de la solicitud
+entrepreneur.application.form.button.publish = Publicar
 
 entrepreneur.application.button.return = Volver

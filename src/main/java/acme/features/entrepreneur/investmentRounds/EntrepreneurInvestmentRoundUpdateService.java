@@ -87,10 +87,6 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 		assert entity != null;
 		assert errors != null;
 
-		if (!errors.hasErrors("amountMoney")) {
-			errors.state(request, entity.getAmountMoney().getCurrency().equals("EUR") || entity.getAmountMoney().getCurrency().equals("€"), "amountMoney", "entrepreneur.investmentRound.form.error.zoneEur");
-		}
-
 		//Filtro Anti-Spam
 
 		SpamFilter sf = new SpamFilter();
@@ -107,6 +103,19 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 		if (!errors.hasErrors("description")) {
 			Boolean isSpam = sf.isFreeSpam(spamWordPieces, entity.getDescription(), threshold);
 			errors.state(request, isSpam, "description", "entrepreneur.investmentRound.error.spam");
+		}
+
+		if (!errors.hasErrors("ticker")) {
+			Integer id = request.getModel().getInteger("id");
+			Double sumBudget = this.repository.sumBudgetWorkProgramme(id);
+			if (sumBudget == null) {
+				sumBudget = 0.;
+			}
+			errors.state(request, sumBudget.equals(entity.getAmountMoney().getAmount()) || !request.getModel().getBoolean("status"), "ticker", "entrepreneur.investmentRound.error.sumBudget");
+		}
+
+		if (!errors.hasErrors("amountMoney")) {
+			errors.state(request, entity.getAmountMoney().getCurrency().equals("EUR") || entity.getAmountMoney().getCurrency().equals("€"), "amountMoney", "entrepreneur.investmentRound.form.error.zoneEur");
 		}
 
 	}

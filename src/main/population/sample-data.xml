@@ -496,6 +496,16 @@
 		<property name="investmentRound" ref="investmentRound02" />
 		<property name="status" value="Pending" />
 	</bean>
+	
+	<bean id="application03" class="acme.entities.applications.Application">
+		<property name="ticker" value="SCI-20-000005" />
+		<property name="creationMoment" value="2018/11/07 14:24" />
+		<property name="statement" value="Oferta limitada" />
+		<property name="moneyOffer" value="200.0€" />
+		<property name="investor" ref="investor1Investor" />
+		<property name="investmentRound" ref="investmentRound03" />
+		<property name="status" value="Pending" />
+	</bean>
 
 	<!-- Forum -->
 

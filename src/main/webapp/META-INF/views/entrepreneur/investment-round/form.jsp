@@ -48,7 +48,7 @@
 	</jstl:if>
 
 	<jstl:if test="${command == 'show' && status == false}">
-		<acme:form-checkbox code="entrepreneur.investmentRound.label.notPublished" path="status" readonly="true" />
+		<acme:form-checkbox code="entrepreneur.investmentRound.label.notPublished" path="status" />
 	</jstl:if>
 
 	<jstl:if test="${command == 'show' && status == true}">
