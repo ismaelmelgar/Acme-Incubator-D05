@@ -18,12 +18,24 @@ entrepreneur.investmentRound.label.moreInfo = More Info
 entrepreneur.investmentRound.label.entrepreneur = Entrepreneur
 entrepreneur.investmentRound.label.status = Status
 
+entrepreneur.investmentRound.label.published = Published
+entrepreneur.investmentRound.label.notPublished = Not published
+entrepreneur.investmentRound.label.confirmPublishment = Check the box in order to confirm the publication
+
+entrepreneur.investmentRound.form.button.statusFinal = Publish
+entrepreneur.investmentRound.form.button.updatePublish = Confirm
 entrepreneur.investmentRound.form.button.workProgramme = Work Programme
 entrepreneur.investmentRound.form.button.accountingRecord = Accounting Record
-entrepreneur.investmentRound.form.button.update = Create
+entrepreneur.investmentRound.form.button.create = Create
 entrepreneur.investmentRound.form.button.update = Update
 entrepreneur.investmentRound.form.button.delete = Delete
+entrepreneur.investmentRound.form.button.createWorkProgramme = Crete Work Programme
 
 entrepreneur.investmentRound.button.return = Return
 
-entrepreneur.investment-round.form.error.hasApplication = It cannot be deleted. It has an application
+entrepreneur.investmentRound.form.error.hasApplication = It cannot be deleted. It has an application
+entrepreneur.investmentRound.form.error.tickerRepeated = Existing ticker, write a different one
+entrepreneur.investmentRound.form.error.zoneEur = Solo están permitidos Euro, EUR o €
+entrepreneur.investmentRound.error.spam = Please, enter a text free of spam
+entrepreneur.investmentRound.error.sumBudget = The total sum of the work program activities must equal the amount of money in the investment round
+entrepreneur.investmentRound.error.regexp.ticker = The ticket must follow this pattern: “SSS-YY-NNNNNN”.  “SSS” denotes the first three letters of the corresponding activity sector (it must be capitalised and with “X” or “XX” if necessary); “YY” denotes the last two digits of the creation year; and “NNNNNN” is num-ber in range “000000” up to “999999”

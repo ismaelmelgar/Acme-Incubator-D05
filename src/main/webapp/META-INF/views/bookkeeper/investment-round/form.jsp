@@ -25,6 +25,12 @@
 	<acme:form-money code="bookkeeper.investmentRound.label.amountMoney" path="amountMoney" />
 	<acme:form-url code="bookkeeper.investmentRound.label.moreInfo" path="moreInfo" />
 	<acme:form-textbox code="bookkeeper.investmentRound.label.entrepreneur" path="entrepreneur.identity.fullName" />
+	<jstl:if test="${status == true}">
+		<acme:form-checkbox code="entrepreneur.investmentRound.label.published" path="status" readonly="true" />
+	</jstl:if>
+	<jstl:if test="${status == false}">
+		<acme:form-checkbox code="entrepreneur.investmentRound.label.notPublished" path="status" readonly="true" />
+	</jstl:if>
 
 	<acme:form-submit test="${numAR > 0}" code="bookkeeper.investmentRound.form.button.accountingRecord"
 		action="/bookkeeper/accounting-record/list-mine?investmentRoundid=${id}" method="get" />

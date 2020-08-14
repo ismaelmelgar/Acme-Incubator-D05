@@ -6,9 +6,14 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.accountingRecords.AccountingRecord;
+import acme.entities.forums.Forum;
 import acme.entities.investmentRounds.InvestmentRound;
+import acme.entities.messages.Message;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.workProgrammes.WorkProgramme;
+import acme.features.entrepreneur.accountingRecord.EntrepreneurAccountingRecordRepository;
+import acme.features.entrepreneur.message.EntrepreneurMessageRepository;
 import acme.features.entrepreneur.workProgrammes.EntrepreneurWorkProgrammeRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -23,6 +28,12 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 
 	@Autowired
 	EntrepreneurWorkProgrammeRepository		workProgrammeRepository;
+
+	@Autowired
+	EntrepreneurMessageRepository			messageRepository;
+
+	@Autowired
+	EntrepreneurAccountingRecordRepository	accountingRecordRepository;
 
 
 	@Override
@@ -77,7 +88,7 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		if (!errors.hasErrors("ticker")) {
 			idInvestmentRound = request.getModel().getInteger("id");
 			totalApplications = this.repository.findApplicationByInvestmentRoundId(idInvestmentRound);
-			errors.state(request, totalApplications == 0, "ticker", "entrepreneur.investment-round.form.error.hasApplication");
+			errors.state(request, totalApplications == 0, "ticker", "entrepreneur.investmentRound.form.error.hasApplication");
 		}
 	}
 
@@ -86,11 +97,19 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		assert request != null;
 		assert entity != null;
 
+		// DELETE WORK PROGRAMME
 		Collection<WorkProgramme> workProgrammes = this.repository.findAllWorkProgrammeByInvestmentRoundId(entity.getId());
+		this.repository.deleteAll(workProgrammes);
 
-		for (WorkProgramme wp : workProgrammes) {
-			this.workProgrammeRepository.delete(wp);
-		}
+		// DELETE FORUM
+		Forum forum = this.repository.findForumByInvestmentRoundId(entity.getId());
+		Collection<Message> messages = this.messageRepository.findMany(forum.getId());
+		this.messageRepository.deleteAll(messages);
+		this.repository.delete(forum);
+
+		// DELETE ACCOUNTING RECORD PUBLISHED OR DRAFT
+		Collection<AccountingRecord> accRecord = this.accountingRecordRepository.findByInvestmentRoundId(entity.getId());
+		this.repository.deleteAll(accRecord);
 
 		this.repository.delete(entity);
 	}

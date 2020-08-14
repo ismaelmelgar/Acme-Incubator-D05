@@ -18,12 +18,24 @@ entrepreneur.investmentRound.label.moreInfo = Mas informacion
 entrepreneur.investmentRound.label.entrepreneur = Contratista
 entrepreneur.investmentRound.label.status = Estado
 
+entrepreneur.investmentRound.label.published = Publicado
+entrepreneur.investmentRound.label.notPublished = No publicado
+entrepreneur.investmentRound.label.confirmPublishment = Marca la casilla para confirmar la publicación
+
+entrepreneur.investmentRound.form.button.statusFinal = Publicar
+entrepreneur.investmentRound.form.button.updatePublish = Confirmar
 entrepreneur.investmentRound.form.button.workProgramme = Programa de Trabajo
 entrepreneur.investmentRound.form.button.accountingRecord = Registro Contable
-entrepreneur.investmentRound.form.button.update = Crear
+entrepreneur.investmentRound.form.button.create = Crear
 entrepreneur.investmentRound.form.button.update = Actualizar
 entrepreneur.investmentRound.form.button.delete = Borrar
+entrepreneur.investmentRound.form.button.createWorkProgramme = Crear Programa de Trabajo
 
 entrepreneur.investmentRound.button.return = Volver
 
-entrepreneur.investment-round.form.error.hasApplication = No puede ser eliminada. Tiene una solicitud pendiente
+entrepreneur.investmentRound.form.error.hasApplication = No puede ser eliminada. Tiene una solicitud pendiente
+entrepreneur.investmentRound.form.error.tickerRepeated = Ticker existente, escriba otro distinto.
+entrepreneur.investmentRound.form.error.zoneEur = Only Euro, EUR or € are allowed
+entrepreneur.investmentRound.error.spam = El texto debe estar libre de spam
+entrepreneur.investmentRound.error.sumBudget = La suma total de las actividades del programa de trabajo debe ser igual a la cantidad de dinero de la ronda de inversion
+entrepreneur.investmentRound.error.regexp.ticker = El boleto debe seguir este patrón: "SSS-YY-NNNNNN".  "SSS" denota las tres primeras letras del sector de actividad correspondiente (debe ir en mayúsculas y con "X" o "XX" si es necesario); "YY" denota los dos últimos dígitos del año de creación; y "NNNNNN" es un número en el rango "000000" hasta "999999"

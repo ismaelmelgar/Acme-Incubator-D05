@@ -6,6 +6,8 @@ import java.util.Collection;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
+import acme.entities.configuration.Customisation;
+import acme.entities.forums.Forum;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.workProgrammes.WorkProgramme;
@@ -37,5 +39,17 @@ public interface EntrepreneurInvestmentRoundRepository extends AbstractRepositor
 
 	@Query("select wp from WorkProgramme wp where wp.investmentRound.id = ?1")
 	Collection<WorkProgramme> findAllWorkProgrammeByInvestmentRoundId(int investmentRoundId);
+
+	@Query("select f from Forum f where f.investmentRound.id = ?1")
+	Forum findForumByInvestmentRoundId(int investmentRoundId);
+
+	@Query("select e.ticker from InvestmentRound e")
+	Collection<String> getTickers();
+
+	@Query("select c from Customisation c")
+	Customisation findCustomisation();
+
+	@Query("select sum(wp.budget.amount) from WorkProgramme wp where wp.investmentRound.id = ?1")
+	Double sumBudgetWorkProgramme(int id);
 
 }
