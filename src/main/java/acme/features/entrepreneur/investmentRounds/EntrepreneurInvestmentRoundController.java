@@ -17,7 +17,7 @@ import acme.framework.controllers.AbstractController;
 @RequestMapping("entrepreneur/investment-round")
 public class EntrepreneurInvestmentRoundController extends AbstractController<Entrepreneur, InvestmentRound> {
 
-	// Internal state ------------------------------------------------
+	// Internal state ---------------------------------------------------------
 
 	@Autowired
 	private EntrepreneurInvestmentRoundListMineService	listMineService;
@@ -25,12 +25,24 @@ public class EntrepreneurInvestmentRoundController extends AbstractController<En
 	@Autowired
 	private EntrepreneurInvestmentRoundShowService		showService;
 
+	@Autowired
+	private EntrepreneurInvestmentRoundCreateService	createService;
 
-	// Constructors --------------------------------------------------
+	@Autowired
+	private EntrepreneurInvestmentRoundUpdateService	updateService;
+
+	@Autowired
+	private EntrepreneurInvestmentRoundDeleteService	deleteService;
+
+
+	// Constructors -----------------------------------------------------------
 	@PostConstruct
 	private void initialise() {
 		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-
+		super.addBasicCommand(BasicCommand.CREATE, this.createService);
+		super.addBasicCommand(BasicCommand.UPDATE, this.updateService);
+		super.addBasicCommand(BasicCommand.DELETE, this.deleteService);
 	}
+
 }

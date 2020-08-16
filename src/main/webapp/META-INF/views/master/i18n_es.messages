@@ -51,8 +51,12 @@ master.menu.bulletin.dos.minuesaBulletin.form = ¡Grita a Minuesa!
 # master.menu.authenticated ###################################################
 
 master.menu.authenticated = Autenticado
-
 master.menu.authenticated.investmentRound.list = Rondas de Inversion
+
+master.menu.authenticated.become-entrepreneur = Hazte empresario
+master.menu.authenticated.update-entrepreneur = Actualizar mis datos de empresario
+master.menu.authenticated.become-investor = Hazte inversor
+master.menu.authenticated.update-investor = Actualizar mis datos de inversor
 
 # master.menu.administrator ###################################################
 
@@ -89,6 +93,7 @@ master.menu.consumer.favourite-link = Enlace favorito
 master.menu.entrepreneur = Empresario
 
 master.menu.entrepreneur.investmentRound.listMine = Mis Rondas de Inversion
+master.menu.entrepreneur.investmentRound.create = Crear Ronda de Inversion
 master.menu.entrepreneur.application.listMine = Solicitudes a Mis Rondas de Inversion
 master.menu.entrepreneur.forum.listMine = Mis foros
 

@@ -17,10 +17,9 @@
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
 
 <acme:list>
-	<acme:list-column code="investor.application.label.ticker" path="ticker" width="40%"/>	
+	<acme:list-column code="investor.application.label.ticker" path="ticker" width="30%"/>	
 	<acme:list-column code="investor.application.label.creationMoment" path="creationMoment" width="10%"/>	
 	<acme:list-column code="investor.application.label.moneyOffer" path="moneyOffer" width="10%"/>	
-	<acme:list-column code="investor.application.label.tickerInvestmentRound" path="investmentRound.ticker" width="40%"/>									
+	<acme:list-column code="investor.application.label.tickerInvestmentRound" path="investmentRound.ticker" width="30%"/>									
+	<acme:list-column code="investor.application.label.status" path="status" width="20%"/>									
 </acme:list>
-
-

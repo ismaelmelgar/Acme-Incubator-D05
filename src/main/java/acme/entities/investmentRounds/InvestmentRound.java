@@ -38,7 +38,7 @@ public class InvestmentRound extends DomainEntity {
 	@Column(length = 13)
 	@Length(min = 1, max = 13)
 	@NotBlank
-	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$")
+	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$", message = "{entrepreneur.investmentRound.error.regexp.ticker}")
 	private String				ticker;
 
 	@Temporal(TemporalType.TIMESTAMP)
@@ -67,6 +67,8 @@ public class InvestmentRound extends DomainEntity {
 	@Length(max = 200)
 	@URL
 	private String				moreInfo;
+
+	private Boolean				status;
 
 	//Relationships -----------------------------------------------------
 

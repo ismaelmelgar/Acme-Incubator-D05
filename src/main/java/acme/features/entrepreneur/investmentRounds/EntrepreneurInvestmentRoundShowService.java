@@ -1,14 +1,11 @@
 
 package acme.features.entrepreneur.investmentRounds;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
-import acme.entities.workProgrammes.WorkProgramme;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Principal;
@@ -53,7 +50,7 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 		int numAR = this.repository.findAccountingRecordByInvestmentRoundId(id);
 		model.setAttribute("numAR", numAR);
 
-		request.unbind(entity, model, "ticker", "creationMoment", "round", "title", "description", "amountMoney", "moreInfo", "entrepreneur.identity.fullName");
+		request.unbind(entity, model, "ticker", "creationMoment", "round", "title", "description", "amountMoney", "moreInfo", "entrepreneur.identity.fullName", "status");
 
 	}
 
@@ -66,16 +63,6 @@ public class EntrepreneurInvestmentRoundShowService implements AbstractShowServi
 
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
-
-		//Money of the Work Programmes + Money of the Investment Rounds
-
-		Double contador = 0.;
-		contador = contador + result.getAmountMoney().getAmount();
-		Collection<WorkProgramme> res = this.repository.findWorkProgrammeByInvestmentRoundId(id);
-		for (WorkProgramme wp : res) {
-			contador = contador + wp.getBudget().getAmount();
-		}
-		result.getAmountMoney().setAmount(contador);
 
 		return result;
 	}
