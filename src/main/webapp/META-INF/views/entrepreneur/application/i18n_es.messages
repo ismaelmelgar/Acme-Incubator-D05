@@ -23,3 +23,6 @@ entrepreneur.application.form.button.status = Estado de la solicitud
 entrepreneur.application.form.button.publish = Publicar
 
 entrepreneur.application.button.return = Volver
+
+entrepreneur.application.error.reasonAccepted = No debes dar una razón si aceptas la solicitud
+entrepreneur.application.error.reasonRejected = Debes dar una razón para rechazar la solicitud
