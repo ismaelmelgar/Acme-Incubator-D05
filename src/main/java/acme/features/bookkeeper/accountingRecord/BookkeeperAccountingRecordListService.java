@@ -14,7 +14,7 @@ import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class BookkeeperAccountingRecordListMineService implements AbstractListService<Bookkeeper, AccountingRecord> {
+public class BookkeeperAccountingRecordListService implements AbstractListService<Bookkeeper, AccountingRecord> {
 
 	// Internal state ------------------------------------------------------------------
 
@@ -36,6 +36,7 @@ public class BookkeeperAccountingRecordListMineService implements AbstractListSe
 		assert entity != null;
 		assert model != null;
 
+		model.setAttribute("investmentRoundId", entity.getInvestmentRound().getId());
 		request.unbind(entity, model, "title", "creation");
 
 	}
@@ -47,9 +48,10 @@ public class BookkeeperAccountingRecordListMineService implements AbstractListSe
 		Collection<AccountingRecord> result;
 		Principal principal;
 
+		int investmentRoundId = request.getModel().getInteger("investmentRoundId");
 		principal = request.getPrincipal();
-		result = this.repository.findManyByBookkeeperId(principal.getActiveRoleId());
 
+		result = this.repository.findManyByBookkeeperIdAndInvestmentRoundId(investmentRoundId, principal.getActiveRoleId());
 		return result;
 	}
 }

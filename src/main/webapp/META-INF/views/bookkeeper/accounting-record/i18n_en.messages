@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 bookkeeper.accounting-record.form.label.title = Title	
+bookkeeper.accounting-record.label.body = Body
 bookkeeper.accounting-record.form.label.investmentRound = Investment Record Ticker
 bookkeeper.accounting-record.form.label.moneyOffer = Money Offer
 bookkeeper.accounting-record.form.label.creation = Creation
@@ -17,5 +18,7 @@ bookkeeper.accounting-record.form.label.status = Status (Marked means it's publi
 
 bookkeeper.accounting-record.list.label.title = Title
 bookkeeper.accounting-record.list.label.creation = Creation
+bookkeeper.accountingRecord.button.create = Create 
+bookkeeper.accountingRecord.button.update = Update
 
 bookkeeper.accounting-record.form.button.return = Return

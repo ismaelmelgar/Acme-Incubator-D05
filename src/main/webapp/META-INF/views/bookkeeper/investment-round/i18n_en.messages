@@ -20,4 +20,5 @@ bookkeeper.investmentRound.label.published = Published
 bookkeeper.investmentRound.label.notPublished = Not published
 
 bookkeeper.investmentRound.form.button.accountingRecord = Accounting Record
+bookkeeper.investmentRound.button.createAccountingRecord = Create Accounting Record
 bookkeeper.investmentRound.button.return = Return

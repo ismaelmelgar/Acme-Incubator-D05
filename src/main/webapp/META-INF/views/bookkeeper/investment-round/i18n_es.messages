@@ -19,5 +19,6 @@ bookkeeper.investmentRound.label.entrepreneur = Contratista
 bookkeeper.investmentRound.label.published = Publicado
 bookkeeper.investmentRound.label.notPublished = No publicado
 
-bookkeeper.investmentRound.form.button.accountingRecord = Accounting Record
+bookkeeper.investmentRound.form.button.accountingRecord = Registro Contable
+bookkeeper.investmentRound.button.createAccountingRecord = Crear Registro Contable
 bookkeeper.investmentRound.button.return = Volver
