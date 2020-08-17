@@ -79,8 +79,11 @@ public class EntrepreneurApplicationUpdateService implements AbstractUpdateServi
 		assert errors != null;
 
 		if (!errors.hasErrors("reason")) {
-			errors.state(request, entity.getReason() != null && entity.getReason() != "" || !entity.getStatus().equals("rejected"), "reason", "entrepreneur.application.error.reason");
+			errors.state(request, entity.getReason() != null && entity.getReason() != "" || !entity.getStatus().equals("Rejected"), "reason", "entrepreneur.application.error.reasonRejected");
+		}
 
+		if (!errors.hasErrors("reason")) {
+			errors.state(request, entity.getReason() == null || entity.getReason() == "" || !entity.getStatus().equals("Accepted"), "reason", "entrepreneur.application.error.reasonAccepted");
 		}
 
 	}
