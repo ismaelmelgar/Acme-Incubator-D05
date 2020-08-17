@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 bookkeeper.accounting-record.form.label.title = Titulo
+bookkeeper.accounting-record.label.body = Cuerpo
 bookkeeper.accounting-record.form.label.investmentRound = Ticker de la Ronda de Inversiones
 bookkeeper.accounting-record.form.label.amountMoney = Cantidad económica
 bookkeeper.accounting-record.form.label.creation = Creación
@@ -17,5 +18,7 @@ bookkeeper.accounting-record.form.label.status = Estado (Si la casilla está mar
 
 bookkeeper.accounting-record.list.label.title = Titulo
 bookkeeper.accounting-record.list.label.creation = Creación
+bookkeeper.accountingRecord.button.create = Crear
+bookkeeper.accountingRecord.button.update = Actualizar
 
 bookkeeper.accounting-record.form.button.return= Volver
