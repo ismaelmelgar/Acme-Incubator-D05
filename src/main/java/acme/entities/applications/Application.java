@@ -34,10 +34,7 @@ public class Application extends DomainEntity {
 
 	//Attributes -----------------------------------------------------
 
-	@Column(length = 13)
-	@Length(min = 1, max = 13)
-	@NotBlank
-	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$")
+	@Pattern(regexp = "^[A-Z]{3}[-][0-9]{2}[-][0-9]{6}$", message = "{investor.application.error.ticker.format}")
 	private String				ticker;
 
 	@Temporal(TemporalType.TIMESTAMP)

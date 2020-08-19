@@ -34,7 +34,10 @@ entrepreneur.investmentRound.form.button.createWorkProgramme = Create Work Progr
 entrepreneur.investmentRound.button.return = Return
 
 entrepreneur.investmentRound.form.error.hasApplication = It cannot be deleted. It has an application
-entrepreneur.investmentRound.form.error.tickerRepeated = Existing ticker, write a different one
 entrepreneur.investmentRound.form.error.zoneEur = Euro, EUR o €
 entrepreneur.investmentRound.error.spam = Please, enter a text free of spam
 entrepreneur.investmentRound.error.sumBudget = Total sum of the work program activities must be equal to the amount of money in the investment round
+entrepreneur.investmentRound.error.ticker.format = The ticker must follow this format: SSS-YY-NNNNN, where S denotes a letter and where Y and N are numbers
+entrepreneur.investmentRound.error.ticker.repeated = Existing ticker, write a different one
+entrepreneur.investmentRound.error.activitySector =  The ticker must follow this format: SSS-YY-NNNNNN where “SSS” denotes the first three letters of the corresponding activity sector
+entrepreneur.investmentRound.error.anyo = The ticker must follow this format: SSS-YY-NNNNNN where “YY” denotes the last two digits of the creation year

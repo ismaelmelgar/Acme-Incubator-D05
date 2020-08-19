@@ -1,6 +1,7 @@
 
 package acme.features.entrepreneur.investmentRounds;
 
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 
@@ -80,7 +81,7 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		assert errors != null;
 
 		Collection<String> tickers = this.repository.getTickers();
-
+		String[] activitySector = this.repository.findCustomisation().getActivitySectors().split(",");
 		//Filtro Anti-Spam
 
 		SpamFilter sf = new SpamFilter();
@@ -99,17 +100,39 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 			errors.state(request, isSpam, "description", "entrepreneur.investmentRound.error.spam");
 		}
 
-		if (!errors.hasErrors("ticker")) {
-			errors.state(request, !tickers.contains(entity.getTicker()), "ticker", "entrepreneur.investmentRound.form.error.tickerRepeated");
-		}
-
 		if (!errors.hasErrors("amountMoney")) {
 			errors.state(request, entity.getAmountMoney().getCurrency().equals("EUR") || entity.getAmountMoney().getCurrency().equals("€"), "amountMoney", "entrepreneur.investmentRound.form.error.zoneEur");
 		}
 
+		// TICKER
+
 		if (!errors.hasErrors("ticker")) {
-			String ticker = entity.getTicker();
-			System.out.println(ticker);
+			errors.state(request, !tickers.contains(entity.getTicker()), "ticker", "entrepreneur.investmentRound.error.ticker.repeated");
+		}
+
+		if (!errors.hasErrors("ticker")) {
+			String texto = entity.getTicker();
+			String subS = texto.substring(0, 3);
+			Boolean res = false;
+			for (int i = 0; i <= activitySector.length - 1; i++) {
+				String SSS = activitySector[i].trim().substring(0, 3).toUpperCase();
+				if (subS.equals(SSS)) {
+					res = true;
+					break;
+				}
+			}
+			errors.state(request, res, "ticker", "entrepreneur.investmentRound.error.activitySector");
+		}
+
+		if (!errors.hasErrors("ticker")) {
+			String texto = entity.getTicker();
+			String subY = texto.substring(4, 6);
+			Calendar cal = Calendar.getInstance();
+			Integer anyo = cal.get(Calendar.YEAR);
+			String anyoSub = anyo.toString().substring(2, 4);
+			Boolean put = subY.equals(anyoSub);
+			errors.state(request, put, "ticker", "entrepreneur.investmentRound.error.anyo");
+
 		}
 
 	}

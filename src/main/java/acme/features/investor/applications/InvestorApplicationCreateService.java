@@ -1,6 +1,8 @@
 
 package acme.features.investor.applications;
 
+import java.util.Calendar;
+import java.util.Collection;
 import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -83,6 +85,40 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		Collection<String> tickers = this.repository.getTickers();
+		String[] activitySector = this.repository.findCustomisation().getActivitySectors().split(",");
+
+		// TICKER
+
+		if (!errors.hasErrors("ticker")) {
+			errors.state(request, !tickers.contains(entity.getTicker()), "ticker", "investor.application.error.ticker.repeated");
+		}
+
+		if (!errors.hasErrors("ticker")) {
+			String texto = entity.getTicker();
+			String subS = texto.substring(0, 3);
+			Boolean res = false;
+			for (int i = 0; i <= activitySector.length - 1; i++) {
+				String SSS = activitySector[i].trim().substring(0, 3).toUpperCase();
+				if (subS.equals(SSS)) {
+					res = true;
+					break;
+				}
+			}
+			errors.state(request, res, "ticker", "investor.application.error.activitySector");
+		}
+
+		if (!errors.hasErrors("ticker")) {
+			String texto = entity.getTicker();
+			String subY = texto.substring(4, 6);
+			Calendar cal = Calendar.getInstance();
+			Integer anyo = cal.get(Calendar.YEAR);
+			String anyoSub = anyo.toString().substring(2, 4);
+			Boolean put = subY.equals(anyoSub);
+			errors.state(request, put, "ticker", "investor.application.error.anyo");
+
+		}
 
 	}
 
