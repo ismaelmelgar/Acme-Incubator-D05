@@ -57,6 +57,8 @@ master.menu.authenticated.update-entrepreneur = Update my entrepreneur data
 master.menu.authenticated.become-investor = Become an investor
 master.menu.authenticated.update-investor = Update my investor data
 
+master.menu.authenticated.forum.listMine = My Forums
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrator

@@ -7,13 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.accountingRecords.AccountingRecord;
-import acme.entities.forums.Forum;
 import acme.entities.investmentRounds.InvestmentRound;
-import acme.entities.messages.Message;
 import acme.entities.roles.Entrepreneur;
 import acme.entities.workProgrammes.WorkProgramme;
 import acme.features.entrepreneur.accountingRecord.EntrepreneurAccountingRecordRepository;
-import acme.features.entrepreneur.message.EntrepreneurMessageRepository;
 import acme.features.entrepreneur.workProgrammes.EntrepreneurWorkProgrammeRepository;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -28,9 +25,6 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 
 	@Autowired
 	EntrepreneurWorkProgrammeRepository		workProgrammeRepository;
-
-	@Autowired
-	EntrepreneurMessageRepository			messageRepository;
 
 	@Autowired
 	EntrepreneurAccountingRecordRepository	accountingRecordRepository;
@@ -100,12 +94,6 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		// DELETE WORK PROGRAMME
 		Collection<WorkProgramme> workProgrammes = this.repository.findAllWorkProgrammeByInvestmentRoundId(entity.getId());
 		this.repository.deleteAll(workProgrammes);
-
-		// DELETE FORUM
-		Forum forum = this.repository.findForumByInvestmentRoundId(entity.getId());
-		Collection<Message> messages = this.messageRepository.findMany(forum.getId());
-		this.messageRepository.deleteAll(messages);
-		this.repository.delete(forum);
 
 		// DELETE ACCOUNTING RECORD PUBLISHED OR DRAFT
 		Collection<AccountingRecord> accRecord = this.accountingRecordRepository.findByInvestmentRoundId(entity.getId());

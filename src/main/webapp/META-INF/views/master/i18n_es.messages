@@ -58,6 +58,8 @@ master.menu.authenticated.update-entrepreneur = Actualizar mis datos de empresar
 master.menu.authenticated.become-investor = Hazte inversor
 master.menu.authenticated.update-investor = Actualizar mis datos de inversor
 
+master.menu.authenticated.forum.listMine = Mis Foros
+
 # master.menu.administrator ###################################################
 
 master.menu.administrator = Administrador
