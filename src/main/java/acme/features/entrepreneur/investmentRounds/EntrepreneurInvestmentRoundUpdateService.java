@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import acme.entities.configuration.Customisation;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Entrepreneur;
-import acme.features.entrepreneur.forum.EntrepreneurForumRepository;
 import acme.features.spamFilter.SpamFilter;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
@@ -19,10 +18,7 @@ import acme.framework.services.AbstractUpdateService;
 public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateService<Entrepreneur, InvestmentRound> {
 
 	@Autowired
-	EntrepreneurInvestmentRoundRepository	repository;
-
-	@Autowired
-	EntrepreneurForumRepository				forumRepository;
+	EntrepreneurInvestmentRoundRepository repository;
 
 
 	@Override
