@@ -48,6 +48,10 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		assert entity != null;
 		assert model != null;
 
+		Customisation customisation = this.repository.findCustomisation();
+		String activitySectors = customisation.getActivitySectors();
+		model.setAttribute("activitySectors", activitySectors);
+
 		request.unbind(entity, model, "ticker", "creationMoment", "round", "title", "description", "status", "amountMoney", "moreInfo", "entrepreneur.identity.fullName");
 
 	}
