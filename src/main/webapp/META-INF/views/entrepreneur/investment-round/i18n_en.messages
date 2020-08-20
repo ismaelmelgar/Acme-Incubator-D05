@@ -41,3 +41,6 @@ entrepreneur.investmentRound.error.ticker.format = The ticker must follow this f
 entrepreneur.investmentRound.error.ticker.repeated = Existing ticker, write a different one
 entrepreneur.investmentRound.error.activitySector =  The ticker must follow this format: SSS-YY-NNNNNN where “SSS” denotes the first three letters of the corresponding activity sector
 entrepreneur.investmentRound.error.anyo = The ticker must follow this format: SSS-YY-NNNNNN where “YY” denotes the last two digits of the creation year
+
+entrepreneur.investmentRound.activitySectors = The first 3 letters of the ticker must correspond to the first 3 letters of the desired sector of activity:
+entrepreneur.investmentRound.YY = \nYY numbers correspond to the last two digits of the Year

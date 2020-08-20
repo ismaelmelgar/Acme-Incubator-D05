@@ -40,3 +40,7 @@ entrepreneur.investmentRound.error.ticker.format = El ticker debe seguir el sigu
 entrepreneur.investmentRound.error.ticker.repeated = Ticker existente, escriba otro distinto
 entrepreneur.investmentRound.error.activitySector = El ticker debe seguir el siguiente formato: SSS-YY-NNNNNN  donde "SSS" denota las tres primeras letras del sector de actividad correspondiente 
 entrepreneur.investmentRound.error.anyo = El ticker debe seguir el siguiente formato: SSS-YY-NNNNNN donde "YY" denota los dos últimos dígitos del año de creación
+
+entrepreneur.investmentRound.activitySectors = Las 3 primeras letras del ticker deben corresponder a las 3 primeras letras en mayúscula del sector de actividad deseado. Los sectores disponibles son:
+entrepreneur.investmentRound.YY = Los números YY corresponden a los dos últimos dígitos del año
+

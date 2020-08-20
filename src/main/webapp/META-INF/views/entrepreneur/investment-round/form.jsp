@@ -18,36 +18,46 @@
 <acme:form>
 	<jstl:if test="${command == 'create'}">
 		<acme:form-textbox code="entrepreneur.investmentRound.label.ticker" placeholder="SSS-YY-NNNNNN" path="ticker" />
-	</jstl:if>
-	<jstl:if test="${command != 'create'}">
-		<acme:form-textbox code="entrepreneur.investmentRound.label.ticker" placeholder="SSS-YY-NNNNNN" path="ticker" readonly="true" />
-	</jstl:if>
-	<jstl:if test="${command != 'create'}">
-		<acme:form-moment code="entrepreneur.investmentRound.label.creation" path="creationMoment" readonly="true" />
-	</jstl:if>
-
-	<jstl:if test="${status == false}">
-		<acme:form-textbox code="entrepreneur.investmentRound.label.round" path="round" placeholder="SEED, ANGEL, SERIES_A, SERIES_B, SERIES_C, BRIDGE" />
+		<acme:message code="entrepreneur.investmentRound.activitySectors" />
+		<acme:message code="${activitySectors}" />
+		<br />
+		<acme:message code="entrepreneur.investmentRound.YY" />
+		<br />
+		<br />
+		<acme:form-textbox code="entrepreneur.investmentRound.label.round" path="round"
+			placeholder="SEED, ANGEL, SERIES_A, SERIES_B, SERIES_C, BRIDGE" />
 		<acme:form-textbox code="entrepreneur.investmentRound.label.title" path="title" />
 		<acme:form-textarea code="entrepreneur.investmentRound.label.description" path="description" />
 		<acme:form-money code="entrepreneur.investmentRound.label.amountMoney" path="amountMoney" />
 		<acme:form-url code="entrepreneur.investmentRound.label.moreInfo" path="moreInfo" />
 	</jstl:if>
+	<jstl:if test="${command != 'create'}">
+		<acme:form-textbox code="entrepreneur.investmentRound.label.ticker" placeholder="SSS-YY-NNNNNN" path="ticker" readonly="true" />
+		<acme:form-moment code="entrepreneur.investmentRound.label.creation" path="creationMoment" readonly="true" />
+		<jstl:if test="${status == false}">
+			<acme:form-textbox code="entrepreneur.investmentRound.label.round" path="round"
+				placeholder="SEED, ANGEL, SERIES_A, SERIES_B, SERIES_C, BRIDGE" />
+			<acme:form-textbox code="entrepreneur.investmentRound.label.title" path="title" />
+			<acme:form-textarea code="entrepreneur.investmentRound.label.description" path="description" />
+			<acme:form-money code="entrepreneur.investmentRound.label.amountMoney" path="amountMoney" />
+			<acme:form-url code="entrepreneur.investmentRound.label.moreInfo" path="moreInfo" />
+		</jstl:if>
 
-	<jstl:if test="${status == true}">
-		<acme:form-textbox code="entrepreneur.investmentRound.label.round" path="round" readonly="true" />
-		<acme:form-textbox code="entrepreneur.investmentRound.label.title" path="title" readonly="true" />
-		<acme:form-textarea code="entrepreneur.investmentRound.label.description" path="description" readonly="true" />
-		<acme:form-money code="entrepreneur.investmentRound.label.amountMoney" path="amountMoney" readonly="true" />
-		<acme:form-url code="entrepreneur.investmentRound.label.moreInfo" path="moreInfo" readonly="true" />
-		<acme:form-textbox code="entrepreneur.investmentRound.label.entrepreneur" path="entrepreneur.identity.fullName" readonly="true" />
+		<jstl:if test="${status == true}">
+			<acme:form-textbox code="entrepreneur.investmentRound.label.round" path="round" readonly="true" />
+			<acme:form-textbox code="entrepreneur.investmentRound.label.title" path="title" readonly="true" />
+			<acme:form-textarea code="entrepreneur.investmentRound.label.description" path="description" readonly="true" />
+			<acme:form-money code="entrepreneur.investmentRound.label.amountMoney" path="amountMoney" readonly="true" />
+			<acme:form-url code="entrepreneur.investmentRound.label.moreInfo" path="moreInfo" readonly="true" />
+			<acme:form-textbox code="entrepreneur.investmentRound.label.entrepreneur" path="entrepreneur.identity.fullName" readonly="true" />
+		</jstl:if>
 	</jstl:if>
 
 	<jstl:if test="${command != 'create'}">
 		<acme:form-textbox code="entrepreneur.investmentRound.label.entrepreneur" path="entrepreneur.identity.fullName" readonly="true" />
 	</jstl:if>
 
-	<jstl:if test="${status == false}">
+	<jstl:if test="${command != 'create' && status == false}">
 		<acme:form-checkbox code="entrepreneur.investmentRound.label.notPublished" path="status" />
 	</jstl:if>
 
