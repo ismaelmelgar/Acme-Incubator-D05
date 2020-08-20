@@ -97,9 +97,25 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 
 		if (!errors.hasErrors("ticker")) {
 			String texto = entity.getTicker();
+
+			Integer lonTicker = 0;
+			for (int j = 0; j <= texto.length() - 1; j++) {
+				if (Character.isLetter(texto.charAt(j))) {
+					lonTicker = lonTicker + 1;
+				}
+			}
+
 			String subS = texto.substring(0, 3);
 			Boolean res = false;
+
 			for (int i = 0; i <= activitySector.length - 1; i++) {
+				activitySector[i] = activitySector[i].trim();
+				if (activitySector[i].length() == 1) {
+					activitySector[i] = activitySector[i] + "XX";
+				}
+				if (activitySector[i].length() == 2) {
+					activitySector[i] = activitySector[i] + "X";
+				}
 				String SSS = activitySector[i].trim().substring(0, 3).toUpperCase();
 				if (subS.equals(SSS)) {
 					res = true;

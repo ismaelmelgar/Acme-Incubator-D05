@@ -22,5 +22,5 @@ investor.application.button.return = Volver
 
 investor.application.error.ticker.format = El ticker debe seguir el siguiente formato: SSS-YY-NNNNNN, donde S denota una letra  y donde Y y N son numeros
 investor.application.error.ticker.repeated = Ticker existente, escriba otro distinto
-investor.application.error.activitySector = El ticker debe seguir el siguiente formato: SSS-YY-NNNNNN  donde "SSS" denota las tres primeras letras del sector de actividad correspondiente 
+investor.application.error.activitySector = El ticker debe seguir el siguiente formato: SSS-YY-NNNNNN  donde "SSS" denota las tres primeras letras del sector de actividad correspondiente. Debe estar en mayúsculas y con "X" o "XX" si es necesario.
 investor.application.error.anyo = El ticker debe seguir el siguiente formato: SSS-YY-NNNNNN donde "YY" denota los dos últimos dígitos del año de creación
