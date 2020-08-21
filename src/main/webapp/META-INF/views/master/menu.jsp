@@ -75,9 +75,6 @@
 			<!--  Customisation -->
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.customisation.list" action="/administrator/customisation/list" />
-			<!--  Bookkeeper Request -->
-			<acme:menu-separator />
-			<acme:menu-suboption code="master.menu.administrator.bookkeeper.request" action="/administrator/bookkeeper-request/list" />
 			<!--  Notices -->
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.notices.list" action="/administrator/notice/list" />
@@ -154,8 +151,6 @@
 				access="!hasRole('Consumer')" />
 			<acme:menu-suboption code="master.menu.user-account.consumer" action="/authenticated/consumer/update"
 				access="hasRole('Consumer')" />
-			<acme:menu-suboption code="master.menu.user-account.become-bookkeeper" action="/authenticated/bookkeeper-request/create"
-				access="!hasRole('Bookkeeper')" />
 			<!--  Become entrepreneur -->
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.authenticated.become-entrepreneur" action="/authenticated/entrepreneur/create"

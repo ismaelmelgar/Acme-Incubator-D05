@@ -43,4 +43,3 @@ entrepreneur.investmentRound.error.anyo = El ticker debe seguir el siguiente for
 
 entrepreneur.investmentRound.activitySectors = Las 3 primeras letras del ticker deben corresponder a las 3 primeras letras en mayúscula del sector de actividad deseado. Los sectores disponibles son:
 entrepreneur.investmentRound.YY = Los números YY corresponden a los dos últimos dígitos del año
-

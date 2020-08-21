@@ -17,7 +17,13 @@
 
 <acme:form>
 	<acme:form-hidden path="investmentRoundId" />
-	<acme:form-textbox code="investor.application.label.ticker" path="ticker" />
+	<acme:form-textbox code="investor.application.label.ticker" placeholder="SSS-YY-NNNNNN" path="ticker" />
+	<acme:message code="entrepreneur.investmentRound.activitySectors" />
+	<acme:message code="${activitySectors}" />
+	<br />
+	<acme:message code="entrepreneur.investmentRound.YY" />
+	<br />
+	<br />
 	<jstl:if test="${command != 'create'}">
 		<acme:form-moment code="investor.application.label.creationMoment" path="creationMoment" readonly="true" />
 	</jstl:if>
