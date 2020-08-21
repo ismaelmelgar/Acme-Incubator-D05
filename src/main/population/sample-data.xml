@@ -572,32 +572,14 @@
 	<bean name="accountingRecord01" class="acme.entities.accountingRecords.AccountingRecord">
 		<property name="title" value="AR 1" />
 		<property name="status" value="true" />
-		<property name="creation" value="2020/07/07 11:00" />
-		<property name="body" value="Example of accounting record." />
-		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
-		<property name="investmentRound" ref="investmentRound03" />
-	</bean>
-
-	<bean name="accountingRecord02" class="acme.entities.accountingRecords.AccountingRecord">
-		<property name="title" value="AR 2" />
-		<property name="status" value="true" />
-		<property name="creation" value="2020/07/10 12:00" />
-		<property name="body" value="Example of accounting record." />
-		<property name="bookkeeper" ref="bookkeeper2Bookkeeper" />
-		<property name="investmentRound" ref="investmentRound04" />
-	</bean>
-
-	<bean name="accountingRecord03" class="acme.entities.accountingRecords.AccountingRecord">
-		<property name="title" value="AR 3" />
-		<property name="status" value="true" />
 		<property name="creation" value="2020/07/10 13:00" />
 		<property name="body" value="Example of accounting record." />
 		<property name="bookkeeper" ref="bookkeeper1Bookkeeper" />
 		<property name="investmentRound" ref="investmentRound05" />
 	</bean>
 	
-	<bean name="accountingRecord04" class="acme.entities.accountingRecords.AccountingRecord">
-		<property name="title" value="AR 4" />
+	<bean name="accountingRecord02" class="acme.entities.accountingRecords.AccountingRecord">
+		<property name="title" value="AR 2" />
 		<property name="status" value="false" />
 		<property name="creation" value="2020/07/10 14:00" />
 		<property name="body" value="Example of accounting record." />
