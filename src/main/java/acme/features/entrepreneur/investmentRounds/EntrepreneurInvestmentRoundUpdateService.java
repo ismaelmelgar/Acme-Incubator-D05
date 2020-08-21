@@ -101,18 +101,20 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 			errors.state(request, isSpam, "description", "entrepreneur.investmentRound.error.spam");
 		}
 
-		if (!errors.hasErrors("ticker")) {
+		if (!errors.hasErrors("status")) {
 			Integer id = request.getModel().getInteger("id");
 			Double sumBudget = this.repository.sumBudgetWorkProgramme(id);
 			if (sumBudget == null) {
 				sumBudget = 0.;
 			}
-			errors.state(request, sumBudget.equals(entity.getAmountMoney().getAmount()) || !request.getModel().getBoolean("status"), "ticker", "entrepreneur.investmentRound.error.sumBudget");
+			errors.state(request, sumBudget.equals(entity.getAmountMoney().getAmount()) || !request.getModel().getBoolean("status"), "status", "entrepreneur.investmentRound.error.sumBudget");
 		}
 
 		if (!errors.hasErrors("amountMoney")) {
 			errors.state(request, entity.getAmountMoney().getCurrency().equals("EUR") || entity.getAmountMoney().getCurrency().equals("€"), "amountMoney", "entrepreneur.investmentRound.form.error.zoneEur");
 		}
+
+		request.getModel().setAttribute("error", errors.hasErrors());
 
 	}
 

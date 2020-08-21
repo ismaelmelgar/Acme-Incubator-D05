@@ -18,6 +18,7 @@
 <acme:form>
 
 	<acme:form-hidden path="investmentRoundId"/>
+	<acme:form-hidden path="status"/>
 	
 	<acme:form-textbox code="bookkeeper.accounting-record.form.label.title" path="title"/>
 	<acme:form-textbox code="bookkeeper.accounting-record.label.body" path="body"/>

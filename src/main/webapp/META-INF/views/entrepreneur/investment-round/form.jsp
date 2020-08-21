@@ -19,6 +19,8 @@
 	<jstl:if test="${command == 'create'}">
 		<acme:form-textbox code="entrepreneur.investmentRound.label.ticker" placeholder="SSS-YY-NNNNNN" path="ticker" />
 		<acme:message code="entrepreneur.investmentRound.activitySectors" />
+		
+		
 		<acme:message code="${activitySectors}" />
 		<br />
 		<acme:message code="entrepreneur.investmentRound.YY" />
@@ -42,7 +44,9 @@
 			<acme:form-money code="entrepreneur.investmentRound.label.amountMoney" path="amountMoney" />
 			<acme:form-url code="entrepreneur.investmentRound.label.moreInfo" path="moreInfo" />
 		</jstl:if>
-
+		
+		
+		
 		<jstl:if test="${status == true}">
 			<acme:form-textbox code="entrepreneur.investmentRound.label.round" path="round" readonly="true" />
 			<acme:form-textbox code="entrepreneur.investmentRound.label.title" path="title" readonly="true" />
