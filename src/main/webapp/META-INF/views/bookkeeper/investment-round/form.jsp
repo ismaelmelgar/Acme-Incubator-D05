@@ -35,6 +35,9 @@
 	<acme:form-submit test="${numAR > 0}" code="bookkeeper.investmentRound.form.button.accountingRecord"
 		action="/bookkeeper/accounting-record/list?investmentRoundId=${id}" method="get" />
 	
-	<acme:form-submit code="bookkeeper.investmentRound.button.createAccountingRecord" action="/bookkeeper/accounting-record/create?investmentRoundId=${id}" method="get"/>
+	
+	<acme:form-submit test="${status == true}" code="bookkeeper.investmentRound.button.createAccountingRecord"
+		action="/bookkeeper/accounting-record/create?investmentRoundId=${id}" method="get" />
+	
 	<acme:form-return code="bookkeeper.investmentRound.button.return" />
 </acme:form>

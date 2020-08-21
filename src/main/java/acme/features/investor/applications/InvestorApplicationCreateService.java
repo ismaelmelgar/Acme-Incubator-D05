@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.applications.Application;
+import acme.entities.configuration.Customisation;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Investor;
 import acme.framework.components.Errors;
@@ -46,6 +47,10 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		assert request != null;
 		assert entity != null;
 		assert model != null;
+
+		Customisation customisation = this.repository.findCustomisation();
+		String activitySectors = customisation.getActivitySectors();
+		model.setAttribute("activitySectors", activitySectors);
 
 		model.setAttribute("investmentRoundId", entity.getInvestmentRound().getId());
 		request.unbind(entity, model, "ticker", "creationMoment", "statement", "moneyOffer", "investor.identity.fullName", "investmentRound.ticker");
@@ -85,6 +90,10 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		assert request != null;
 		assert entity != null;
 		assert errors != null;
+
+		Customisation customisation = this.repository.findCustomisation();
+		String activitySectors = customisation.getActivitySectors();
+		request.getModel().setAttribute("activitySectors", activitySectors);
 
 		Collection<String> tickers = this.repository.getTickers();
 		String[] activitySector = this.repository.findCustomisation().getActivitySectors().split(",");

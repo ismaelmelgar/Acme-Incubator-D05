@@ -87,6 +87,9 @@ public class EntrepreneurInvestmentRoundCreateService implements AbstractCreateS
 		Collection<String> tickers = this.repository.getTickers();
 		String[] activitySector = this.repository.findCustomisation().getActivitySectors().split(",");
 
+		String activitySectors = customisation.getActivitySectors();
+		model.setAttribute("activitySectors", activitySectors);
+		
 		//Filtro Anti-Spam
 
 		SpamFilter sf = new SpamFilter();

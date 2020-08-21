@@ -25,3 +25,6 @@ investor.application.error.ticker.format = The ticker must follow this format: S
 investor.application.error.ticker.repeated = Existing ticker, write a different one
 investor.application.error.activitySector =  The ticker must follow this format: SSS-YY-NNNNNN where “SSS” denotes the first three letters of the corresponding activity sector. It must be capitalised and with “X” or “XX” if necessary
 investor.application.error.anyo = The ticker must follow this format: SSS-YY-NNNNNN where “YY” denotes the last two digits of the creation year
+
+investor.application.activitySectors = The first 3 letters of the ticker must correspond to the first 3 letters of the desired sector of activity:
+investor.application.YY = \nYY numbers correspond to the last two digits of the Year
