@@ -92,8 +92,7 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		assert entity != null;
 		assert errors != null;
 
-		Customisation customisation = this.repository.findCustomisation();
-		String activitySectors = customisation.getActivitySectors();
+		String activitySectors = this.repository.findCustomisation().getActivitySectors();
 		request.getModel().setAttribute("activitySectors", activitySectors);
 
 		Collection<String> tickers = this.repository.getTickers();
