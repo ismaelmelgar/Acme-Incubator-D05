@@ -5,7 +5,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.applications.Application;
+import acme.entities.configuration.Customisation;
 import acme.entities.roles.Entrepreneur;
+import acme.features.spamFilter.SpamFilter;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -84,6 +86,19 @@ public class EntrepreneurApplicationUpdateService implements AbstractUpdateServi
 
 		if (!errors.hasErrors("reason")) {
 			errors.state(request, entity.getReason() == null || entity.getReason() == "" || !entity.getStatus().equals("Accepted"), "reason", "entrepreneur.application.error.reasonAccepted");
+		}
+
+		//Filtro Anti-Spam
+
+		SpamFilter sf = new SpamFilter();
+		Customisation customisation = this.repository.findCustomisation();
+		String spam = customisation.getSpamWords();
+		Double threshold = customisation.getThreshold();
+		String[] spamWordPieces = sf.spamWordPieces(spam);
+
+		if (!errors.hasErrors("reason")) {
+			Boolean isSpam = sf.isFreeSpam(spamWordPieces, entity.getReason(), threshold);
+			errors.state(request, isSpam, "reason", "entrepreneur.application.error.spam");
 		}
 
 	}

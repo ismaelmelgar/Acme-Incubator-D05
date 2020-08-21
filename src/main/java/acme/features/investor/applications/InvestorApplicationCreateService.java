@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.applications.Application;
+import acme.entities.configuration.Customisation;
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Investor;
+import acme.features.spamFilter.SpamFilter;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -91,6 +93,19 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 
 		if (!errors.hasErrors("moneyOffer")) {
 			errors.state(request, entity.getMoneyOffer().getCurrency().equals("EUR") || entity.getMoneyOffer().getCurrency().equals("€"), "moneyOffer", "investor.application.form.error.zoneEur");
+		}
+
+		//Filtro Anti-Spam
+
+		SpamFilter sf = new SpamFilter();
+		Customisation customisation = this.repository.findCustomisation();
+		String spam = customisation.getSpamWords();
+		Double threshold = customisation.getThreshold();
+		String[] spamWordPieces = sf.spamWordPieces(spam);
+
+		if (!errors.hasErrors("statement")) {
+			Boolean isSpam = sf.isFreeSpam(spamWordPieces, entity.getStatement(), threshold);
+			errors.state(request, isSpam, "statement", "investor.application.error.spam");
 		}
 
 		// TICKER

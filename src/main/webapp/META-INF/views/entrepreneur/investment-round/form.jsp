@@ -69,7 +69,7 @@
 		action="/entrepreneur/investment-round/create" />
 	<acme:form-submit test="${(command == 'show' || command == 'update') && status == false}"
 		code="entrepreneur.investmentRound.form.button.update" action="/entrepreneur/investment-round/update" />
-	<acme:form-submit test="${command == 'show' || command == 'delete'}" code="entrepreneur.investmentRound.form.button.delete"
+	<acme:form-submit test="${command == 'show' || command == 'update'|| command == 'delete'}" code="entrepreneur.investmentRound.form.button.delete"
 		action="/entrepreneur/investment-round/delete" />
 
 	<acme:form-submit test="${command != 'create'}" code="entrepreneur.investmentRound.form.button.workProgramme"

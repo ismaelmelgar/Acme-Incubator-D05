@@ -22,3 +22,5 @@ bookkeeper.accountingRecord.button.create = Create
 bookkeeper.accountingRecord.button.update = Update
 
 bookkeeper.accounting-record.form.button.return = Return
+
+bookkeeper.accountingRecord.error.spam = Please, enter a text free of spam

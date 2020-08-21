@@ -35,6 +35,7 @@ entrepreneur.investmentRound.button.return = Volver
 
 entrepreneur.investmentRound.form.error.hasApplication = No puede ser eliminada. Tiene una solicitud pendiente
 entrepreneur.investmentRound.form.error.zoneEur = EUR o € permitidos
+entrepreneur.investmentRound.error.spam = Por favor, introduce un texto libre de spam
 entrepreneur.investmentRound.error.sumBudget = La suma total de las actividades del programa de trabajo debe ser igual a la cantidad de dinero de la ronda de inversion
 entrepreneur.investmentRound.error.ticker.format = El ticker debe seguir el siguiente formato: SSS-YY-NNNNNN, donde S denota una letra  y donde Y y N son numeros
 entrepreneur.investmentRound.error.ticker.repeated = Ticker existente, escriba otro distinto
