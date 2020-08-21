@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import acme.entities.applications.Application;
+import acme.entities.configuration.Customisation;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
@@ -17,5 +18,8 @@ public interface EntrepreneurApplicationRepository extends AbstractRepository {
 
 	@Query("select a from Application a where a.id = ?1")
 	Application findOneById(int id);
+
+	@Query("select c from Customisation c")
+	Customisation findCustomisation();
 
 }

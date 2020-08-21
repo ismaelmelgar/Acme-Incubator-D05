@@ -114,7 +114,10 @@ public class EntrepreneurInvestmentRoundUpdateService implements AbstractUpdateS
 			errors.state(request, entity.getAmountMoney().getCurrency().equals("EUR") || entity.getAmountMoney().getCurrency().equals("€"), "amountMoney", "entrepreneur.investmentRound.form.error.zoneEur");
 		}
 
-		request.getModel().setAttribute("error", errors.hasErrors());
+		if (errors.hasErrors() == true) {
+			request.getModel().setAttribute("status", false);
+
+		}
 
 	}
 

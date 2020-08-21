@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 investor.application.label.ticker = Ticker
+investor.application.error.spam = Por favor, introduce un texto libre de spam
 investor.application.label.creationMoment = Creacion
 investor.application.label.statement = Declaracion
 investor.application.label.moneyOffer = Oferta de dinero

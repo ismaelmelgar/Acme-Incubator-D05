@@ -24,5 +24,6 @@ entrepreneur.application.form.button.publish = Publish
 
 entrepreneur.application.button.return = Return
 
+entrepreneur.application.error.spam = Please, enter a text free of spam
 entrepreneur.application.error.reasonAccepted = You mustn't give a reason if you accept the application
 entrepreneur.application.error.reasonRejected = You must give a reason if you reject the application

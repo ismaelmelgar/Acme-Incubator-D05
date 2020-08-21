@@ -95,7 +95,7 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 		Collection<WorkProgramme> workProgrammes = this.repository.findAllWorkProgrammeByInvestmentRoundId(entity.getId());
 		this.repository.deleteAll(workProgrammes);
 
-		// DELETE ACCOUNTING RECORD PUBLISHED OR DRAFT
+		// DELETE ACCOUNTING RECORD
 		Collection<AccountingRecord> accRecord = this.accountingRecordRepository.findByInvestmentRoundId(entity.getId());
 		this.repository.deleteAll(accRecord);
 
