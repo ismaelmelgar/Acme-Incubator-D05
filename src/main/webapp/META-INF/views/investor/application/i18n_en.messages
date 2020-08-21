@@ -20,6 +20,7 @@ investor.application.form.button.create = Create application
 
 investor.application.button.return = Return
 
+investor.application.form.error.zoneEur = EUR or €
 investor.application.error.ticker.format = The ticker must follow this format: SSS-YY-NNNNN, where S denotes a letter and where Y and N are numbers
 investor.application.error.ticker.repeated = Existing ticker, write a different one
 investor.application.error.activitySector =  The ticker must follow this format: SSS-YY-NNNNNN where “SSS” denotes the first three letters of the corresponding activity sector. It must be capitalised and with “X” or “XX” if necessary

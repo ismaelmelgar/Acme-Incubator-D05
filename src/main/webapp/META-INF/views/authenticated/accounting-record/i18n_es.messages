@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 authenticated.accounting-record.form.label.title = Titulo
+authenticated.accounting-record.form.label.body = Cuerpo
 authenticated.accounting-record.form.label.investmentRound = Ticker de la Ronda de Inversiones
 authenticated.accounting-record.form.label.amountMoney = Cantidad económica
 authenticated.accounting-record.form.label.creation = Creación

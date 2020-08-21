@@ -89,6 +89,10 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 		Collection<String> tickers = this.repository.getTickers();
 		String[] activitySector = this.repository.findCustomisation().getActivitySectors().split(",");
 
+		if (!errors.hasErrors("moneyOffer")) {
+			errors.state(request, entity.getMoneyOffer().getCurrency().equals("EUR") || entity.getMoneyOffer().getCurrency().equals("€"), "moneyOffer", "investor.application.form.error.zoneEur");
+		}
+
 		// TICKER
 
 		if (!errors.hasErrors("ticker")) {

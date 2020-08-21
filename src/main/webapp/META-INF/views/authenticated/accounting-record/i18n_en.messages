@@ -8,7 +8,8 @@
 # purposes.  The copyright owner does not offer any warranties or representations, nor do
 # they accept any liabilities with respect to them.
 
-authenticated.accounting-record.form.label.title = Title	
+authenticated.accounting-record.form.label.title = Title
+authenticated.accounting-record.form.label.body	= Body
 authenticated.accounting-record.form.label.investmentRound = Investment Record Ticker
 authenticated.accounting-record.form.label.moneyOffer = Money Offer
 authenticated.accounting-record.form.label.creation = Creation

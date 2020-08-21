@@ -9,6 +9,7 @@
 # they accept any liabilities with respect to them.
 
 entrepreneur.accounting-record.form.label.title = Titulo
+entrepreneur.accounting-record.form.label.body = Cuerpo
 entrepreneur.accounting-record.form.label.investmentRound = Ticker de la Ronda de Inversiones
 entrepreneur.accounting-record.form.label.amountMoney = Cantidad económica
 entrepreneur.accounting-record.form.label.creation = Creación

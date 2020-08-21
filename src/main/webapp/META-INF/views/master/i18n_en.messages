@@ -71,11 +71,17 @@ master.menu.administrator.notices.create = Create notice
 master.menu.administrator.inquiries.list = Inquiries
 master.menu.administrator.inquiries.create = Create inquirie
 
-master.menu.administrator.challenges.list = Challenges
-master.menu.administrator.challenges.create = Create challenge
+master.menu.administrator.overtures.list = Overtures
+master.menu.administrator.overtures.create = Create overture
 
 master.menu.administrator.technologyRecords.list = Technology Records
 master.menu.administrator.technologyRecords.create = Create technology record
+
+master.menu.administrator.toolRecords.list = Tool Records
+master.menu.administrator.toolRecords.create = Create tool record
+
+master.menu.administrator.challenges.list = Challenges
+master.menu.administrator.challenges.create = Create challenge
 
 master.menu.administrator.bookkeeper.request = Bookkeeper requests
 
