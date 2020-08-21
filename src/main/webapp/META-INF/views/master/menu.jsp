@@ -72,28 +72,36 @@
 		<%--------------------Administrator--------------------%>
 		<acme:menu-option code="master.menu.administrator" access="hasRole('Administrator')">
 			<acme:menu-suboption code="master.menu.administrator.user-accounts" action="/administrator/user-account/list" />
+			<!--  Customisation -->
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.customisation.list" action="/administrator/customisation/list" />
+			<!--  Bookkeeper Request -->
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.administrator.bookkeeper.request" action="/administrator/bookkeeper-request/list" />
 			<!--  Notices -->
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.notices.list" action="/administrator/notice/list" />
 			<acme:menu-suboption code="master.menu.administrator.notices.create" action="/administrator/notice/create" />
-			<!--  Customisation -->
-			<acme:menu-separator />
-			<acme:menu-suboption code="master.menu.customisation.list" action="/administrator/customisation/list" />
 			<!--  Inquirie -->
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.inquiries.list" action="/administrator/inquirie/list" />
 			<acme:menu-suboption code="master.menu.administrator.inquiries.create" action="/administrator/inquirie/create" />
-			<!--  Challenge -->
+			<!--  Overture -->
 			<acme:menu-separator />
-			<acme:menu-suboption code="master.menu.administrator.challenges.list" action="/administrator/challenge/list" />
-			<acme:menu-suboption code="master.menu.administrator.challenges.create" action="/administrator/challenge/create" />
+			<acme:menu-suboption code="master.menu.administrator.overtures.list" action="/administrator/overture/list" />
+			<acme:menu-suboption code="master.menu.administrator.overtures.create" action="/administrator/overture/create" />
 			<!--  Technology Record -->
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.technologyRecords.list" action="/administrator/technology-record/list" />
 			<acme:menu-suboption code="master.menu.administrator.technologyRecords.create" action="/administrator/technology-record/create" />
-			<!--  Bookkeeper Request -->
+			<!--  Tool Record -->
 			<acme:menu-separator />
-			<acme:menu-suboption code="master.menu.administrator.bookkeeper.request" action="/administrator/bookkeeper-request/list" />
+			<acme:menu-suboption code="master.menu.administrator.toolRecords.list" action="/administrator/tool-record/list" />
+			<acme:menu-suboption code="master.menu.administrator.toolRecords.create" action="/administrator/tool-record/create" />
+			<!--  Challenge -->
+			<acme:menu-separator />
+			<acme:menu-suboption code="master.menu.administrator.challenges.list" action="/administrator/challenge/list" />
+			<acme:menu-suboption code="master.menu.administrator.challenges.create" action="/administrator/challenge/create" />
 			<!--  Shutdown -->
 			<acme:menu-separator />
 			<acme:menu-suboption code="master.menu.administrator.shutdown" action="/master/shutdown" />
