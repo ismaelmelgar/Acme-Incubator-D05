@@ -37,8 +37,7 @@ public class AccountingRecord extends DomainEntity {
 	@NotBlank
 	private String				title;
 
-	@NotNull
-	private boolean				status;
+	private Boolean				status;
 
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
