@@ -32,6 +32,14 @@
 	<jstl:if test="${command != 'create'}">
 		<acme:form-textbox code="investor.application.label.tickerInvestmentRound" path="investmentRound.ticker" readonly="true" />
 		<acme:form-textbox code="investor.application.label.investorName" path="investor.identity.fullName" readonly="true" />
+		<acme:form-select code="investor.application.form.label.status" path="status">
+		<option value="Accepted" <jstl:if test="${status =='Accepted'}">selected</jstl:if>>Accepted</option>
+		<option value="Rejected" <jstl:if test="${status =='Rejected'}">selected</jstl:if>>Rejected</option>
+		<option value="Pending" <jstl:if test="${status =='Pending'}">selected</jstl:if>>Pending</option>
+	</acme:form-select>
+	<jstl:if test="${status=='Rejected'}">
+		<acme:form-textarea code="investor.application.form.label.reason" path="reason" />
+	</jstl:if>
 	</jstl:if>
 
 	<acme:form-submit test="${command == 'create'}" code="investor.application.form.button.create"

@@ -32,7 +32,18 @@ public class BookkeeperAccountingRecordCreateService implements AbstractCreateSe
 	public boolean authorise(final Request<AccountingRecord> request) {
 		assert request != null;
 
-		return true;
+		boolean result = true;
+		Integer investmentRoundId;
+		InvestmentRound investmentRound;
+		investmentRoundId = request.getModel().getInteger("investmentRoundId");
+		investmentRound = this.investmentRoundRepository.findOneById(investmentRoundId);
+
+		// If the investment round is not already published you cannot create a accounting record
+		if (investmentRound.getStatus() == false) {
+			result = false;
+		}
+
+		return result;
 	}
 
 	@Override

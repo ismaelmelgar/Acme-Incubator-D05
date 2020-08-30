@@ -15,6 +15,8 @@ investor.application.label.moneyOffer = Money Offer
 investor.application.label.tickerInvestmentRound = Ticker of Requested Investment Round  
 investor.application.label.investorName = Requested By
 investor.application.label.status = Status
+investor.application.form.label.status = Status
+investor.application.form.label.reason = Reason of rejection (only when rejected)
 
 investor.application.form.button.create = Create application
 

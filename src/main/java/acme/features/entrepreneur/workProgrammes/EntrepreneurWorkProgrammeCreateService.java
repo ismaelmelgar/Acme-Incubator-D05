@@ -43,6 +43,11 @@ public class EntrepreneurWorkProgrammeCreateService implements AbstractCreateSer
 
 		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
 
+		// If the investment round is already published you can not create a work programme
+		if (investmentRound.getStatus() == true) {
+			result = false;
+		}
+
 		return result;
 	}
 

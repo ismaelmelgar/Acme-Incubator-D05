@@ -30,7 +30,18 @@ public class InvestorApplicationCreateService implements AbstractCreateService<I
 	public boolean authorise(final Request<Application> request) {
 		assert request != null;
 
-		return true;
+		boolean result = true;
+		Integer investmentRoundId;
+		InvestmentRound investmentRound;
+		investmentRoundId = request.getModel().getInteger("investmentRoundId");
+		investmentRound = this.repository.findOneByInvestmentRoundId(investmentRoundId);
+
+		// If the investment round is not already published you can not create a application
+		if (investmentRound.getStatus() == false) {
+			result = false;
+		}
+
+		return result;
 	}
 
 	@Override

@@ -33,4 +33,7 @@ public interface InvestorApplicationRepository extends AbstractRepository {
 	@Query("select c from Customisation c")
 	Customisation findCustomisation();
 
+	@Query("select ir from InvestmentRound ir where ir.id = ?1")
+	InvestmentRound findOneByInvestmentRoundId(int id);
+
 }

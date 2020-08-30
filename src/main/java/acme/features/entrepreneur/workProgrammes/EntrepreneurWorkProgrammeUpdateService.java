@@ -31,6 +31,7 @@ public class EntrepreneurWorkProgrammeUpdateService implements AbstractUpdateSer
 
 		workProgrammeId = request.getModel().getInteger("id");
 		workProgramme = this.repository.findOneById(workProgrammeId);
+		System.out.println(workProgramme);
 		entrepreneur = workProgramme.getInvestmentRound().getEntrepreneur();
 		principal = request.getPrincipal();
 		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();

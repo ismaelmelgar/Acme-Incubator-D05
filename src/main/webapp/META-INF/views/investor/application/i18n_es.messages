@@ -16,6 +16,8 @@ investor.application.label.moneyOffer = Oferta de dinero
 investor.application.label.tickerInvestmentRound = Ticker de la Ronda de Inversion solicitada
 investor.application.label.investorName = Solicitado por
 investor.application.label.status = Estado de la solicitud
+investor.application.form.label.status = Estado de la solicitud
+investor.application.form.label.reason = Razón de rechazo (si aplica)
 
 investor.application.form.button.create = Crear solicitud
 
