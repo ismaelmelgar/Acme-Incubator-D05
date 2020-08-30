@@ -9,6 +9,7 @@ import acme.entities.workProgrammes.WorkProgramme;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
@@ -22,7 +23,23 @@ public class EntrepreneurWorkProgrammeDeleteService implements AbstractDeleteSer
 	public boolean authorise(final Request<WorkProgramme> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int workProgrammeId;
+		WorkProgramme workProgramme;
+		Entrepreneur entrepreneur;
+		Principal principal;
+
+		workProgrammeId = request.getModel().getInteger("id");
+		workProgramme = this.repository.findOneById(workProgrammeId);
+		entrepreneur = workProgramme.getInvestmentRound().getEntrepreneur();
+		principal = request.getPrincipal();
+		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
+
+		if (workProgramme.getInvestmentRound().getStatus() == true) {
+			result = false;
+		}
+
+		return result;
 	}
 
 	@Override
