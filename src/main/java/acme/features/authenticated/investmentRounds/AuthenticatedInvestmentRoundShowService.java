@@ -1,14 +1,11 @@
 
 package acme.features.authenticated.investmentRounds;
 
-import java.util.Collection;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Investor;
-import acme.entities.workProgrammes.WorkProgramme;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
@@ -29,7 +26,18 @@ public class AuthenticatedInvestmentRoundShowService implements AbstractShowServ
 	public boolean authorise(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		return true;
+		boolean result = true;
+		int investmentRoundId;
+
+		investmentRoundId = request.getModel().getInteger("id");
+		InvestmentRound investmentRound = this.repository.findOneByIdII(investmentRoundId);
+
+		// If the investment round is already published you can not see it
+		if (investmentRound.getStatus() == false) {
+			result = false;
+		}
+
+		return result;
 	}
 
 	@Override
@@ -57,16 +65,6 @@ public class AuthenticatedInvestmentRoundShowService implements AbstractShowServ
 
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
-
-		//Money of the Work Programmes + Money of the Investment Rounds
-
-		Double contador = 0.;
-		contador = contador + result.getAmountMoney().getAmount();
-		Collection<WorkProgramme> res = this.repository.findWorkProgrammeByInvestmentRoundId(id);
-		for (WorkProgramme wp : res) {
-			contador = contador + wp.getBudget().getAmount();
-		}
-		result.getAmountMoney().setAmount(contador);
 
 		return result;
 	}

@@ -15,6 +15,7 @@ import acme.features.entrepreneur.workProgrammes.EntrepreneurWorkProgrammeReposi
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractDeleteService;
 
 @Service
@@ -34,7 +35,19 @@ public class EntrepreneurInvestmentRoundDeleteService implements AbstractDeleteS
 	public boolean authorise(final Request<InvestmentRound> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int investmentRoundId;
+		InvestmentRound investmentRound;
+		Entrepreneur entrepreneur;
+		Principal principal;
+
+		investmentRoundId = request.getModel().getInteger("id");
+		investmentRound = this.repository.findOneInvestmentRoundById(investmentRoundId);
+		entrepreneur = investmentRound.getEntrepreneur();
+		principal = request.getPrincipal();
+		result = entrepreneur.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override

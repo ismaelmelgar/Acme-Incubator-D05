@@ -4,6 +4,7 @@ package acme.features.authenticated.workProgrammes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.workProgrammes.WorkProgramme;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -24,7 +25,18 @@ public class AuthenticatedWorkProgrammeShowService implements AbstractShowServic
 	public boolean authorise(final Request<WorkProgramme> request) {
 		assert request != null;
 
-		return true;
+		boolean result = true;
+		int workProgrammeId;
+		InvestmentRound investmentRound;
+		workProgrammeId = request.getModel().getInteger("id");
+		investmentRound = this.repository.findInvestmentRoundByWorkProgrammeId(workProgrammeId);
+
+		// If the investment round is not already published you can not see their work programmes
+		if (investmentRound.getStatus() == false) {
+			result = false;
+		}
+
+		return result;
 	}
 
 	@Override
