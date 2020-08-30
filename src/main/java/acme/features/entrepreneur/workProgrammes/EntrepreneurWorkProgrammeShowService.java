@@ -46,6 +46,15 @@ public class EntrepreneurWorkProgrammeShowService implements AbstractShowService
 		assert entity != null;
 		assert model != null;
 
+		int workProgrammeId;
+		WorkProgramme workProgramme;
+
+		workProgrammeId = request.getModel().getInteger("id");
+		workProgramme = this.repository.findOneById(workProgrammeId);
+		boolean irStatus = workProgramme.getInvestmentRound().getStatus();
+
+		model.setAttribute("irStatus", irStatus);
+
 		request.unbind(entity, model, "title", "start", "end", "budget");
 
 	}

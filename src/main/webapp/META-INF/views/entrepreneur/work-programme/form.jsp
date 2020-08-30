@@ -32,15 +32,15 @@
 	<acme:form-money code="entrepreneur.workProgramme.label.budget" path="budget"/>
 	
 
-	<acme:form-submit test="${command == 'show' }"
+	<acme:form-submit test="${command == 'show' && irStatus == false}"
 		code="entrepreneur.workProgramme.button.update" 
 		action="/entrepreneur/work-programme/update"/>
 		
-	<acme:form-submit test="${command == 'show' }"
+	<acme:form-submit test="${command == 'show' && irStatus == false}"
 		code="entrepreneur.workProgramme.button.delete" 
 		action="/entrepreneur/work-programme/delete"/>
 
-	<acme:form-submit test="${command == 'update' }"
+	<acme:form-submit test="${command == 'update' && irStatus == false}"
 		code="entrepreneur.workProgramme.button.update" 
 		action="/entrepreneur/work-programme/update"/>
 	
@@ -48,7 +48,7 @@
 		code="entrepreneur.workProgramme.button.create" 
 		action="/entrepreneur/work-programme/create"/>
 		
-	<acme:form-submit test="${command == 'delete' }"
+	<acme:form-submit test="${command == 'delete' && irStatus == false}"
 		code="entrepreneur.workProgramme.button.delete" 
 		action="/entrepreneur/work-programme/delete"/>
 
