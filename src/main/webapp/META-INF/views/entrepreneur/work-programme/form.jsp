@@ -22,7 +22,7 @@
 <acme:form>
 
 	<acme:form-hidden path="investmentRoundId"/>
-	<acme:form-hidden path="status"/>
+	<acme:form-hidden path="irStatus"/>
 	
 	<acme:form-textbox code="entrepreneur.workProgramme.label.title" path="title"/>
 	<jstl:if test="${command != 'create'}">
