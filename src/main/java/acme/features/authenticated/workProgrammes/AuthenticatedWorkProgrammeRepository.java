@@ -22,4 +22,7 @@ public interface AuthenticatedWorkProgrammeRepository extends AbstractRepository
 	@Query("select wp.investmentRound from WorkProgramme wp where wp.id = ?1")
 	InvestmentRound findInvestmentRoundByWorkProgrammeId(int id);
 
+	@Query("select ir from InvestmentRound ir where ir.id = ?1")
+	InvestmentRound findOneByIdII(int id);
+
 }

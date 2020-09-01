@@ -6,6 +6,7 @@ import java.util.Collection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.workProgrammes.WorkProgramme;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
@@ -25,8 +26,19 @@ public class AuthenticatedWorkProgrammeListService implements AbstractListServic
 	@Override
 	public boolean authorise(final Request<WorkProgramme> request) {
 		assert request != null;
+		boolean result = true;
+		int investmentRoundId;
+		InvestmentRound investmentRound;
 
-		return true;
+		investmentRoundId = request.getModel().getInteger("investmentRoundId");
+		investmentRound = this.repository.findOneByIdII(investmentRoundId);
+
+		// If the investment round is not already published you can not see their work programmes
+		if (investmentRound.getStatus() == false) {
+			result = false;
+		}
+
+		return result;
 	}
 
 	@Override
@@ -34,7 +46,7 @@ public class AuthenticatedWorkProgrammeListService implements AbstractListServic
 		assert request != null;
 
 		Collection<WorkProgramme> result;
-		int investmentRoundId = request.getModel().getInteger("investmenRoundId");
+		int investmentRoundId = request.getModel().getInteger("investmentRoundId");
 		result = this.repository.findWorkProgrammeByInvestmentRoundId(investmentRoundId);
 
 		return result;

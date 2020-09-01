@@ -8,6 +8,7 @@ import acme.entities.accountingRecords.AccountingRecord;
 import acme.entities.roles.Bookkeeper;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
@@ -24,7 +25,28 @@ public class BookkeeperAccountingRecordShowService implements AbstractShowServic
 	public boolean authorise(final Request<AccountingRecord> request) {
 		assert request != null;
 
-		return true;
+		boolean result = true;
+		boolean firstCondition;
+		boolean secondCondition;
+		int accountingRecordId;
+		AccountingRecord accountingRecord;
+		Bookkeeper bookkeeper;
+		Principal principal;
+
+		accountingRecordId = request.getModel().getInteger("id");
+		accountingRecord = this.repository.findOneById(accountingRecordId);
+		bookkeeper = accountingRecord.getBookkeeper();
+		principal = request.getPrincipal();
+		// Status of the Accounting Record (Draft or Published)
+		firstCondition = accountingRecord.getStatus();
+		// BookkeeperId of the Accounting Record - Principal Id
+		secondCondition = bookkeeper.getUserAccount().getId() == principal.getAccountId();
+
+		if (firstCondition == false && secondCondition == false) {
+			result = false;
+		}
+
+		return result;
 	}
 
 	@Override

@@ -28,8 +28,8 @@
 
 	<acme:form-submit test="${isInvestor}" code="investor.investmentRound.form.button.application" action="/investor/application/create?investmentRoundId=${id}"  method="get"/>
 	<acme:form-submit code="authenticated.investmentRound.form.button.workProgramme"
-		action="/authenticated/work-programme/list?investmenRoundId=${id}" method="get" />
+		action="/authenticated/work-programme/list?investmentRoundId=${id}" method="get" />
 	<acme:form-submit test="${numAR > 0}" code="authenticated.investmentRound.form.button.accountingRecord"
-		action="/authenticated/accounting-record/list?investmentRoundid=${id}" method="get" />
+		action="/authenticated/accounting-record/list?investmentRoundId=${id}" method="get" />
 	<acme:form-return code="authenticated.investmentRound.button.return" />
 </acme:form>

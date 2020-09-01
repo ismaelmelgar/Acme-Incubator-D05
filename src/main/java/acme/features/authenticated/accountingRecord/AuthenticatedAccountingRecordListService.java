@@ -44,7 +44,7 @@ public class AuthenticatedAccountingRecordListService implements AbstractListSer
 		assert request != null;
 
 		Collection<AccountingRecord> result;
-		int investmentRoundId = request.getModel().getInteger("investmentRoundid");
+		int investmentRoundId = request.getModel().getInteger("investmentRoundId");
 		result = this.repository.findManyByInvestmentRoundId(investmentRoundId);
 
 		return result;

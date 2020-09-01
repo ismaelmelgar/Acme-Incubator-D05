@@ -5,32 +5,46 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import acme.entities.accountingRecords.AccountingRecord;
-import acme.entities.investmentRounds.InvestmentRound;
 import acme.entities.roles.Bookkeeper;
 import acme.framework.components.Errors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractUpdateService;
 
 @Service
 public class BookkeeperAccountingRecordUpdateService implements AbstractUpdateService<Bookkeeper, AccountingRecord> {
 
+	// Internal state ------------------------------------------------------------------
 	@Autowired
 	BookkeeperAccountingRecordRepository repository;
 
 
+	// AbstractListService<Bookkeeper, AccountingRecord> interface ------------------------------
 	@Override
 	public boolean authorise(final Request<AccountingRecord> request) {
 		assert request != null;
-		boolean result;
-		int investmentRoundId;
-		AccountingRecord accountingRecord;
-		InvestmentRound investmentRound;
 
-		investmentRoundId = request.getModel().getInteger("id");
-		accountingRecord = this.repository.findOneById(investmentRoundId);
-		investmentRound = accountingRecord.getInvestmentRound();
-		result = accountingRecord.getInvestmentRound().getId() == investmentRound.getId();
+		boolean result = true;
+		boolean firstCondition;
+		boolean secondCondition;
+		int accountingRecordId;
+		AccountingRecord accountingRecord;
+		Bookkeeper bookkeeper;
+		Principal principal;
+
+		accountingRecordId = request.getModel().getInteger("id");
+		accountingRecord = this.repository.findOneById(accountingRecordId);
+		bookkeeper = accountingRecord.getBookkeeper();
+		principal = request.getPrincipal();
+		// Status of the Accounting Record (Draft or Published)
+		firstCondition = accountingRecord.getStatus();
+		// BookkeeperId of the Accounting Record - Principal Id
+		secondCondition = bookkeeper.getUserAccount().getId() == principal.getAccountId();
+
+		if (firstCondition == false && secondCondition == false) {
+			result = false;
+		}
 
 		return result;
 	}
@@ -41,8 +55,8 @@ public class BookkeeperAccountingRecordUpdateService implements AbstractUpdateSe
 		assert entity != null;
 		assert errors != null;
 
-		request.bind(entity, errors, "title", "status", "creation");
-		request.bind(entity, errors, "bookkeeper.identity.fullName", "investmentRound.title", "body");
+		request.bind(entity, errors);
+
 	}
 
 	@Override
@@ -52,8 +66,7 @@ public class BookkeeperAccountingRecordUpdateService implements AbstractUpdateSe
 		assert model != null;
 
 		model.setAttribute("investmentRoundId", entity.getInvestmentRound().getId());
-		request.unbind(entity, model, "title", "status", "creation");
-		request.unbind(entity, model, "bookkeeper.identity.fullName", "investmentRound.title", "body");
+		request.unbind(entity, model, "title", "body", "status", "creation", "investmentRound.ticker", "bookkeeper.identity.fullName", "status");
 
 	}
 

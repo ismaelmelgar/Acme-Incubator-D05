@@ -93,6 +93,7 @@ public class BookkeeperAccountingRecordCreateService implements AbstractCreateSe
 		userAccountId = principal.getActiveRoleId();
 		bookkeeper = this.repository.findBookkeeperById(userAccountId);
 		result.setBookkeeper(bookkeeper);
+		result.setStatus(false);
 
 		return result;
 	}

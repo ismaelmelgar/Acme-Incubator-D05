@@ -22,7 +22,7 @@
 <acme:form>
 
 	<acme:form-hidden path="investmentRoundId"/>
-	<acme:form-hidden path="irStatus"/>
+	<acme:form-hidden path="status"/>
 	
 	<acme:form-textbox code="entrepreneur.workProgramme.label.title" path="title"/>
 	<jstl:if test="${command != 'create'}">
@@ -32,15 +32,15 @@
 	<acme:form-money code="entrepreneur.workProgramme.label.budget" path="budget"/>
 	
 
-	<acme:form-submit test="${command == 'show' && irStatus == false}"
+	<acme:form-submit test="${command == 'show' && status == false}"
 		code="entrepreneur.workProgramme.button.update" 
 		action="/entrepreneur/work-programme/update"/>
 		
-	<acme:form-submit test="${command == 'show' && irStatus == false}"
+	<acme:form-submit test="${command == 'show' && status == false}"
 		code="entrepreneur.workProgramme.button.delete" 
 		action="/entrepreneur/work-programme/delete"/>
 
-	<acme:form-submit test="${command == 'update' && irStatus == false}"
+	<acme:form-submit test="${command == 'update'  && status == false}"
 		code="entrepreneur.workProgramme.button.update" 
 		action="/entrepreneur/work-programme/update"/>
 	
@@ -48,7 +48,7 @@
 		code="entrepreneur.workProgramme.button.create" 
 		action="/entrepreneur/work-programme/create"/>
 		
-	<acme:form-submit test="${command == 'delete' && irStatus == false}"
+	<acme:form-submit test="${command == 'delete'  && status == false}"
 		code="entrepreneur.workProgramme.button.delete" 
 		action="/entrepreneur/work-programme/delete"/>
 

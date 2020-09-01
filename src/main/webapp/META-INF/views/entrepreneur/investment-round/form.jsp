@@ -76,7 +76,7 @@
 		action="/entrepreneur/work-programme/list?investmentRoundId=${id}" method="get" />
 	<acme:form-submit test="${(command != 'create') && status == true && numAR > 0}"
 		code="entrepreneur.investmentRound.form.button.accountingRecord"
-		action="/entrepreneur/accounting-record/list?investmentRoundid=${id}" method="get" />
+		action="/entrepreneur/accounting-record/list?investmentRoundId=${id}" method="get" />
 	<acme:form-submit test="${command != 'create' && status == false }"
 		code="entrepreneur.investmentRound.form.button.createWorkProgramme"
 		action="/entrepreneur/work-programme/create?investmentRoundId=${id}&status=${status}" method="get" />

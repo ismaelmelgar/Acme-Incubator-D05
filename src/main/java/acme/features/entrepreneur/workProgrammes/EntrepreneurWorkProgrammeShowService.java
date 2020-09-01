@@ -51,9 +51,9 @@ public class EntrepreneurWorkProgrammeShowService implements AbstractShowService
 
 		workProgrammeId = request.getModel().getInteger("id");
 		workProgramme = this.repository.findOneById(workProgrammeId);
-		boolean irStatus = workProgramme.getInvestmentRound().getStatus();
+		boolean status = workProgramme.getInvestmentRound().getStatus();
 
-		model.setAttribute("irStatus", irStatus);
+		model.setAttribute("status", status);
 
 		request.unbind(entity, model, "title", "start", "end", "budget");
 
